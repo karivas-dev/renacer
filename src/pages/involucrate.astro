@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import DSC01769 from "@assets/engage/DSC01769.jpg";
+import DSC01793 from "@assets/engage/DSC01793.jpg";
+---
+<Layout>
+    <div class="grid grid-cols-5 mx-24 relative h-[calc(100vh-138px)]">
+        <Image
+                src={DSC01769}
+                alt="Foto grupal"
+                class="col-span-4 col-end-5 my-auto rounded-xl"
+                layout="full-width"
+        />
+
+        <div
+                class="absolute bottom-0 -translate-y-1/2 right-0 bg-r-gray-800 w-1/2 p-6 rounded-xl space-y-4"
+        >
+            <h1 class="text-3xl font-bold">¿Cómo puedo ayudar?</h1>
+            <p>
+                En Fundación Renacer creemos que cada aporte cuenta y transforma vidas. Hoy puedes ser parte
+                de nuestra misión, apoyando a jóvenes en su proceso de crecimiento personal, y en la
+                construcción de un futuro con más oportunidades.
+            </p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-8">
+        <Image src={DSC01793} class="col-span-3" alt="Foto grupal" />
+
+        <div class="grid grid-rows-2 col-span-5">
+            <div class="bg-r-green px-8 py-6 text-white space-y-2 flex flex-col justify-items-center">
+                <h1 class="text-2xl font-bold">Ser voluntario</h1>
+                <p class="text-lg">
+                    Aportando tu tiempo, talento y compromiso para acompañar a quienes más lo necesitan.
+                </p>
+            </div>
+
+            <div class="bg-r-gray-800 px-8 py-6">
+                <h1 class="text-2xl font-bold">Donar como persona natural</h1>
+                <p>
+                    Realizando donaciones que contribuyen directamente al desarrollo de nuestros programas.
+                </p>
+            </div>
+        </div>
+    </div>
+</Layout>
