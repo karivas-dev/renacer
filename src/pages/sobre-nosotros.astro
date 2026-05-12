@@ -1,0 +1,122 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DSC01734 from "@assets/aboutUs/DSC01734.JPG";
+import {Image} from "astro:assets";
+import SecondaryButton from "../components/SecondaryButton.astro";
+import Nav from "../components/Nav.astro";
+import {CircleDollarSign, GraduationCap, Headset, Languages, UsersRound, MapPinHouse} from "@lucide/astro";
+import Timeline from "../components/Timeline.astro";
+import { VisSingleContainer, VisDonut, VisBulletLegend } from '@unovis/vue'
+import PieChart from "../components/PieChart.vue";
+
+const genderChart = [
+    { key: 'Mujeres', value: '65%' },
+    { key: 'Hombres', value: '35%' },
+]
+
+const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
+    name: genderChart.key.charAt(0).toUpperCase() + genderChart.key.slice(1)
+}))
+---
+
+<Layout>
+    <div class="my-20 mx-32">
+        <div class="grid grid-cols-2 gap-12">
+            <Image src={DSC01734} class="rounded-2xl" alt="Fotografía grupal" layout='constrained' format='jpeg'/>
+            <div class="my-auto">
+                <h1 class="text-4xl font-bold mb-8">Conoce nuestra <span class="text-r-green">historia</span>
+                    a lo largo de los años</h1>
+                <p class="mb-10">Impulsamos a jóvenes en situación de vulnerabilidad a
+                    construir un futuro con más oportunidades y
+                    esperanza.</p>
+
+                <SecondaryButton route="/sobre-nosotros" text="Conoce nuestra historia"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-12 mx-32">
+        <div class="col-span-2">
+            <h1 class="text-4xl font-bold mb-8">Nuestro <span class="text-r-green">impacto</span></h1>
+            <p>Acompañamos a jóvenes en situación de vulnerabilidad
+                para que desarrollen sus capacidades y construyan un
+                futuro con más oportunidades.</p>
+
+            <div class="flex space-x-16 mt-6">
+                <div class="flex items-center space-x-4">
+                    <UsersRound class="h-12 w-12"/>
+                    <div class="text-center">
+                        <h1 class="text-6xl font-bold">+450</h1>
+                        <p>jóvenes beneficiados</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <MapPinHouse class="h-12 w-12"/>
+                    <div class="text-center">
+                        <h1 class="text-6xl font-bold">2</h1>
+                        <p>sedes</p>
+                    </div>
+                    <div>
+                        <p>San Salvador</p>
+                        <p>Santa Ana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <PieChart data={[  { key: 'names', value: 1396 },
+                { key: 'cool', value: 928 },
+                { key: 'alphanumeric', value: 864 },
+                { key: 'fluffy', value: 518 },
+                { key: 'nerdy', value: 294 },
+                { key: 'other', value: 916 }]}
+              client:load/>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-12 mx-32 my-20">
+        <div class="col-span-2">
+            <h1 class="text-4xl font-bold mb-8">Nuestros <span class="text-r-green">graduados</span></h1>
+            <p>Nuestros graduados reflejan el resultado de nuestro trabajo:
+                <span class="font-bold">
+                    jóvenes preparados, con acceso a educación, empleo y mejores condiciones de vida.
+                </span>
+            </p>
+        </div>
+
+        <div class="mx-auto space-y-14 w-3xs *:relative *:space-x-2 *:text-center *:mx-auto">
+            <div>
+                <CircleDollarSign class="h-20 w-20 absolute right-2 -top-8 text-r-green/35"/>
+                <p class="text-6xl font-bold">83%</p>
+                <p>Tiene ingresos arriba de $400</p>
+            </div>
+            <div>
+                <GraduationCap class="h-20 w-20 absolute right-2 -top-8 text-r-green/35"/>
+                <p class="text-6xl font-bold">81%</p>
+                <p>Ha estudiado alguna licenciatura o ingeniería</p>
+            </div>
+            <div>
+                <Headset class="h-20 w-20 absolute right-2 -top-8 text-r-green/35"/>
+                <p class="text-6xl font-bold">62%</p>
+                <p>Trabaja en atención al cliente o administración</p>
+            </div>
+            <div>
+                <Languages class="h-20 w-20 absolute right-2 -top-8 text-r-green/35"/>
+                <p class="text-6xl font-bold">33%</p>
+                <p>Habla 2 o 3 idiomas</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mx-32">
+        <h1 class="text-4xl font-bold mb-8 text-center">Historias de <span class="text-r-green">esperanza</span></h1>
+
+    </div>
+
+    <div class="mx-32 my-20">
+        <h1 class="text-4xl font-bold mb-8 text-center">Nuestra <span class="text-r-green">historia</span></h1>
+        <Timeline/>
+    </div>
+</Layout>
