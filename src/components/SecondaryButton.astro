@@ -1,0 +1,6 @@
+---
+import Link from './Link.astro'
+const {route, text} = Astro.props;
+---
+
+<Link href={ route } class="border border-r-green px-6 py-4 rounded-xl grow text-center text-r-green hover:text-white hover:bg-r-green">{ text }</Link>

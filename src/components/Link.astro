@@ -1,0 +1,10 @@
+---
+import {twMerge} from "tailwind-merge";
+
+const { href, class: className } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<a href={href} class={twMerge('hover:text-r-green', currentPath == href ? 'text-r-green font-bold' : '', className)} data-astro-prefetch>
+    <slot/>
+</a>
