@@ -1,0 +1,13 @@
+---
+import {House} from "@lucide/astro";
+
+const {icon: Icon, text, id} = Astro.props
+---
+
+<div class="">
+    <div class="flex items-center space-x-3">
+        <h1 class="bg-r-green rounded-full text-center p-2 px-4.5 font-bold text-white">{ id }</h1>
+        { Icon && <Icon class="h-10 w-10"/> }
+    </div>
+    <p>{ text }</p>
+</div>
