@@ -1,11 +1,171 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { Medal, HeartHandshake, Scale, Sprout, Shapes, SquaresIntersect, GraduationCap, BriefcaseBusiness, Handshake } from '@lucide/astro'
+import homepagePasantia from '@assets/home/homepage-pasantia.jpg';
+import banner from '@assets/home/DSC07345.jpg';
+import groupClass from '@assets/home/group-class.jpg';
+import groupEvent from "@assets/home/DSC07175.jpg";
+import grupoRoble from "@assets/home/logos/GrupoRoble.png";
+import hotelRealIntercontinental from "@assets/home/logos/hotelRealIntercontinental.png";
+import quality from "@assets/home/logos/quality.jpg";
+import solaire from "@assets/home/logos/Solaire.jpeg";
+import acsa from "@assets/home/logos/ACSA.png";
+import autofacil from "@assets/home/logos/Autofacil.jpg";
+import gardenTowers from "@assets/home/logos/GardenTowers.png";
+import Nav from "../components/Nav.astro";
+import Card from "../components/Card.astro";
+import SecondaryButton from '../components/SecondaryButton.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const partners = [
+	grupoRoble, hotelRealIntercontinental, quality, solaire, acsa, autofacil, gardenTowers
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout position="fixed">
+	<div class="relative w-full h-screen">
+		<Image src={banner} class="h-screen object-cover" alt="Foto grupal" layout='full-width' format='jpeg'/>
+		<div class="absolute bottom-0 text-white p-6 bg-linear-to-t from-neutral-950 h-5/10 flex flex-col justify-end">
+			<h1 class="text-4xl font-bold mb-8">¿Quiénes <span class="text-r-green">somos?</span></h1>
+			<p class="w-5/6 text-lg flex flex-col">
+				<span>
+					Somos una organización sin fines de lucro en El Salvador que
+					acompaña a jóvenes en situación de vulnerabilidad,
+					especialmente a quienes provienen de casas hogares,
+					brindándoles formación integral a través de nuestro programa
+					Creando Esperanza.
+				</span>
+
+				<span class="pt-4">
+					Mediante capacitación técnica, desarrollo
+					de habilidades para la vida, acompañamiento psicológico y
+					vinculación con empresas aliadas, impulsamos la inserción
+					laboral y la construcción de proyectos de vida dignos,
+					promoviendo oportunidades reales para desarrollo personal y
+					profesional de nuestros jóvenes.
+				</span>
+			</p>
+		</div>
+	</div>
+
+	<main class=" mx-20">
+		<div class="grid grid-cols-2 gap-12 my-32">
+			<Image src={groupClass} class="rounded-2xl" alt="Foto grupal" layout='constrained' format='jpeg'/>
+			<div class="my-auto">
+				<h1 class="text-4xl font-bold mb-8">¿Cómo cambiamos vidas?</h1>
+				<div>
+					<span>
+						Somos una organización sin fines de lucro en El Salvador que
+						acompaña a jóvenes en situación de vulnerabilidad,
+						especialmente a quienes provienen de casas hogares,
+						brindándoles formación integral a través de nuestro programa
+						Creando Esperanza.
+					</span>
+					Mediante capacitación técnica, desarrollo
+					de habilidades para la vida, acompañamiento psicológico y
+					vinculación con empresas aliadas, impulsamos la inserción
+					laboral y la construcción de proyectos de vida dignos,
+					promoviendo oportunidades reales para desarrollo personal y
+					profesional de nuestros jóvenes.
+				</div>
+
+				<div class="flex space-x-4 mt-10">
+					<a class="border border-r-green text-white bg-r-green px-6 py-4 rounded-xl grow text-center">Nuestro impacto</a>
+					<SecondaryButton route="/creando-esperanza" text="Creando Esperanza"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-center my-32">
+			<h1 class="text-4xl font-bold mb-8">Nuestros <span class="text-r-green">valores</span></h1>
+			<p class="mb-16">Los principios que guían cada acción y decisión en nuestro compromiso con la juventud.</p>
+
+			<div class="grid grid-cols-7 gap-y-12 text-xl">
+				<div class="col-span-2 space-y-4">
+					<Medal class="mx-auto w-12 h-12"/>
+					<h2>Excelencia</h2>
+				</div>
+
+				<div class="col-span-2 col-start-3 space-y-4">
+					<SquaresIntersect class="mx-auto w-12 h-12"/>
+					<h2>Transparencia</h2>
+				</div>
+
+				<div class="col-span-2 space-y-4">
+					<Sprout class="mx-auto w-12 h-12"/>
+					<h2>Resilencia</h2>
+				</div>
+
+				<div class="col-span-2 col-start-2 space-y-4">
+					<HeartHandshake class="mx-auto w-12 h-12"/>
+					<h2>Solidaridad</h2>
+				</div>
+
+				<div class="col-span-2 space-y-4">
+					<Scale class="mx-auto w-12 h-12"/>
+					<h2>Integridad</h2>
+				</div>
+
+				<div class="col-span-2 space-y-4">
+					<Shapes class="mx-auto w-12 h-12"/>
+					<h2>Inclusión</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="my-32">
+			<h1 class="text-4xl font-bold mb-8">Transformamos <span class="text-r-green">vidas</span></h1>
+			<p class="w-3/4">
+				A través del patrocinio, las pasantías y el acceso al empleo, abrimos caminos para que
+				muchos jóvenes desarrollen su talento, fortalezcan su futuro y transformen su vida con
+				dignidad y propósito.
+			</p>
+
+			<div class="grid grid-cols-3 gap-8 mt-16 auto-rows-min">
+				<Card title="Patrocinio"
+					  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+					  image={homepagePasantia}
+					  icon={Handshake}
+				/>
+
+				<Card title="Pasantías"
+				      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+				      image={homepagePasantia}
+				      icon={GraduationCap}
+				/>
+
+				<Card title="Empleo"
+				      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+				      image={homepagePasantia}
+				      icon={BriefcaseBusiness}
+				/>
+			</div>
+		</div>
+
+		<div class="my-32 grid grid-cols-2 gap-12">
+			<Image src={groupEvent} class="rounded-2xl" alt="Fotografía grupal" layout='constrained' format='jpeg'/>
+			<div class="my-auto">
+				<h1 class="text-4xl font-bold mb-8">Nuestro <span class="text-r-green">impacto</span></h1>
+				<p class="mb-10">Se refleja en oportunidades que se convierten en resultados.
+					A lo largo de los años, Fundación Renacer ha acompañado a
+					cientos de jóvenes en su formación académica y su inserción
+					laboral, generando mejoras reales en su calidad de vida y
+					fortaleciendo su proyección profesional.</p>
+
+					<SecondaryButton route="/sobre-nosotros" text="Conoce nuestro impacto"/>
+			</div>
+		</div>
+
+		<div class="my-32">
+			<h1 class="text-4xl font-bold mb-12">Nuestros <span class="text-r-green">aliados</span></h1>
+
+			<swiper-container slides-per-view="6" speed="500" loop="true" css-mode="true" autoplay>
+				{partners.map((partner) => (
+					<swiper-slide>
+						<Image src={partner} alt='Logo' layout='fixed' class="h-auto w-35"/>
+					</swiper-slide>
+				))}
+			</swiper-container>
+		</div>
+	</main>
 </Layout>
