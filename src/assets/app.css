@@ -11,3 +11,11 @@
     --color-r-gray-800: oklch(0.934 0 0);
     --color-r-gray-100: oklch(0.98 0 247.86);
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 175px;
+}
