@@ -6,7 +6,9 @@ import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
+    site: process.env.SITE_URL,
+    base: process.env.BASE_URL,
+    vite: {
       plugins: [tailwindcss()],
   },
 
