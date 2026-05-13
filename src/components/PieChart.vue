@@ -12,7 +12,7 @@ const legendItems = Object.entries(props.data).map(([_, data]) => ({
 
 <template>
   <VisBulletLegend :items="legendItems"/>
-  <VisSingleContainer :height="400">
+  <VisSingleContainer>
     <VisDonut
         :data="props.data"
         :value="d => d.value"
