@@ -1,29 +1,44 @@
 ---
 import Link from "./Link.astro";
+import Logo from "@assets/home/Logo-Renacer-SF.png";
+import {Image} from "astro:assets";
+import SecondaryButton from "./SecondaryButton.astro";
 ---
 
 <div class="m-4">
-    <footer class="flex *:flex *:flex-col space-x-8 footer bg-white shadow-2xl px-8 py-4 w-full rounded-lg text-sm text-r-gray-900">
-        <div>
-            <Link href="/#quienes-somos">Inicio</Link>
-            <Link href="/#como-impactamos">¿Cómo impactamos vidas?</Link>
-            <Link href="/#nuestros-valores">Nuestros valores</Link>
-            <Link href="/#transformamos-vidas">Transformamos vidas</Link>
-            <Link href="/#conoce-nuestro-impacto">Nuestro impacto</Link>
-            <Link href="/#aliados">Aliados</Link>
-        </div>
-        <div>
-            <Link href="/sobre-nosotros#conoce-nuestra-historia">Sobre nosotros</Link>
-            <Link href="/sobre-nosotros#nuestro-impacto">Nuestro impacto</Link>
-            <Link href="/sobre-nosotros#nuestros-graduados">Nuestros graduados</Link>
-            <Link href="/sobre-nosotros#nuestra-historia">Nuestra historia</Link>
+    <footer class="flex justify-between footer bg-white shadow-2xl px-12 py-8  w-full rounded-lg text-sm text-r-gray-900">
+        <div class="flex justify-between *:flex *:flex-col space-x-8">
+            <div>
+                <Link href="/#quienes-somos">Inicio</Link>
+                <Link href="/#como-impactamos">¿Cómo impactamos vidas?</Link>
+                <Link href="/#nuestros-valores">Nuestros valores</Link>
+                <Link href="/#transformamos-vidas">Transformamos vidas</Link>
+                <Link href="/#conoce-nuestro-impacto">Nuestro impacto</Link>
+                <Link href="/#aliados">Aliados</Link>
+            </div>
+            <div>
+                <Link href="/sobre-nosotros#conoce-nuestra-historia">Sobre nosotros</Link>
+                <Link href="/sobre-nosotros#nuestro-impacto">Nuestro impacto</Link>
+                <Link href="/sobre-nosotros#nuestros-graduados">Nuestros graduados</Link>
+                <Link href="/sobre-nosotros#nuestra-historia">Nuestra historia</Link>
+            </div>
+
+            <div>
+                <Link href="/creando-esperanza#que-es-creando-esperanza">¿Qué es Creando Esperanza?</Link>
+                <Link href="/creando-esperanza#nuestro-enfoque">Nuestro enfoque</Link>
+                <Link href="/creando-esperanza#nuestros-programas">Nuestros programas</Link>
+                <Link href="/creando-esperanza#como-participar">¿Cómo participar?</Link>
+            </div>
         </div>
 
         <div>
-            <Link href="/creando-esperanza#que-es-creando-esperanza">¿Qué es Creando Esperanza?</Link>
-            <Link href="/creando-esperanza#nuestro-enfoque">Nuestro enfoque</Link>
-            <Link href="/creando-esperanza#nuestros-programas">Nuestros programas</Link>
-            <Link href="/creando-esperanza#como-participar">¿Cómo participar?</Link>
+            <div class="mb-20">
+                <h1 class="text-3xl text-black font-bold">Contáctanos</h1>
+                <p>contacto@fundacionrenacer.com.sv</p>
+                <p>2287-8714</p>
+            </div>
+
+            <SecondaryButton route="/creando-esperanza" text="Creando Esperanza"/>
         </div>
     </footer>
 </div>
