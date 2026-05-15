@@ -17,37 +17,34 @@ import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
 import SecondaryButton from '../components/SecondaryButton.astro';
 import Footer from "../components/Footer.astro";
+import Banner from "../components/Banner.astro";
 
 const partners = [
 	grupoRoble, hotelRealIntercontinental, quality, solaire, acsa, autofacil, gardenTowers
 ];
+
+const bannerItems = [
+	{
+		img: banner,
+		firstText: 'Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.',
+		secondText: 'Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.'
+	},
+	{
+		img: banner,
+		firstText: 'Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.',
+		secondText: 'Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.'
+	}
+];
 ---
 
 <Layout position="fixed">
-	<div class="relative w-full h-screen" id="quienes-somos">
-		<Image src={banner} class="h-screen object-cover" alt="Foto grupal" layout='full-width' format='jpeg'/>
-		<div class="absolute bottom-0 text-white p-6 bg-linear-to-t from-neutral-950 h-5/10 flex flex-col justify-end">
-			<h1 class="text-4xl font-bold mb-8">¿Quiénes <span class="text-r-green">somos?</span></h1>
-			<p class="w-5/6 text-lg flex flex-col">
-				<span>
-					Somos una organización sin fines de lucro en El Salvador que
-					acompaña a jóvenes en situación de vulnerabilidad,
-					especialmente a quienes provienen de casas hogares,
-					brindándoles formación integral a través de nuestro programa
-					Creando Esperanza.
-				</span>
-
-				<span class="pt-4">
-					Mediante capacitación técnica, desarrollo
-					de habilidades para la vida, acompañamiento psicológico y
-					vinculación con empresas aliadas, impulsamos la inserción
-					laboral y la construcción de proyectos de vida dignos,
-					promoviendo oportunidades reales para desarrollo personal y
-					profesional de nuestros jóvenes.
-				</span>
-			</p>
-		</div>
-	</div>
+	<swiper-container slides-per-view="1" speed="5000" loop="true" css-mode="true" autoplay>
+		{bannerItems.map((item) => (
+			<swiper-slide class="my-auto">
+					<Banner firstText={ item.firstText } secondText={ item.secondText }/>
+			</swiper-slide>
+		))}
+	</swiper-container>
 
 	<main class="mx-20">
 		<section class="grid grid-cols-2 gap-12 my-32" id="como-impactamos">
@@ -160,10 +157,10 @@ const partners = [
 		<section class="my-32" id="aliados">
 			<h1 class="text-4xl font-bold mb-12">Nuestros <span class="text-r-green">aliados</span></h1>
 
-			<swiper-container slides-per-view="6" speed="500" loop="true" css-mode="true" autoplay>
+			<swiper-container class="px-10 overflow-visible" slides-per-view="6" speed="500" loop="true" css-mode="true" autoplay navigation="true">
 				{partners.map((partner) => (
-					<swiper-slide>
-						<Image src={partner} alt='Logo' layout='fixed' class="h-auto w-35"/>
+					<swiper-slide class="my-auto">
+						<Image src={partner} alt='Logo' layout='fixed' class="h-auto w-40"/>
 					</swiper-slide>
 				))}
 			</swiper-container>
