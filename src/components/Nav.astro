@@ -1,22 +1,20 @@
----
-import Logo from "@assets/home/Logo-Renacer-SF.png";
-import {Image} from "astro:assets";
-import {twMerge} from "tailwind-merge";
-import Link from "./Link.astro";
+<script setup>
+import { ref } from "vue";
+const open = ref(false);
+</script>
+<template>
 
-const { class: className } = Astro.props;
----
+  <header class={twMerge('flex items-center justify-between bg-white shadow-xl px-8 py-4 w-full rounded-lg', className)}>
+      <Image
+          alt="Fundación Renacer logo" src={Logo} width="125" layout="fixed"
+      />
 
-<header class={twMerge('flex items-center justify-between bg-white shadow-2xl px-8 py-4 w-full rounded-lg', className)}>
-    <Image
-        alt="Fundación Renacer logo" src={Logo} width="125" layout="fixed"
-    />
-
-    <nav class="space-x-6">
-        <Link href="/">Inicio</Link>
-        <Link href="/sobre-nosotros">Sobre nosotros</Link>
-        <Link href="/creando-esperanza">Creando Esperanza</Link>
-        <Link href="/involucrate">Involúcrate</Link>
-        <Link href="/src/pages/sobre-nosotros">Únete</Link>
-    </nav>
-</header>
+      <nav class="space-x-6">
+          <Link href="/">Inicio</Link>
+          <Link href="/sobre-nosotros">Sobre nosotros</Link>
+          <Link href="/creando-esperanza">Creando Esperanza</Link>
+          <Link href="/involucrate">Involúcrate</Link>
+          <Link href="/src/pages/sobre-nosotros">Únete</Link>
+      </nav>
+  </header>
+</template>
