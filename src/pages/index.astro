@@ -38,7 +38,7 @@ const bannerItems = [
 ---
 
 <Layout position="fixed">
-	<swiper-container slides-per-view="1" speed="5000" loop="true" css-mode="true" autoplay>
+	<swiper-container slides-per-view="1" autoplay="true" autoplay-delay="10000" loop="true" css-mode="true" >
 		{bannerItems.map((item) => (
 			<swiper-slide class="my-auto">
 					<Banner firstText={ item.firstText } secondText={ item.secondText }/>
@@ -46,12 +46,12 @@ const bannerItems = [
 		))}
 	</swiper-container>
 
-	<main class="mx-20">
-		<section class="grid grid-cols-2 gap-12 my-32" id="como-impactamos">
-			<Image src={groupClass} class="rounded-2xl" alt="Foto grupal" layout='constrained' format='jpeg'/>
-			<div class="my-auto">
-				<h1 class="text-4xl font-bold mb-8">¿Cómo cambiamos vidas?</h1>
-				<div>
+	<main class="mx-6 md:mx-20">
+		<section class="grid md:grid-cols-2 gap-12 my-32" id="como-impactamos">
+			<Image src={groupClass} class="rounded-2xl order-2" alt="Foto grupal" layout='constrained' format='jpeg'/>
+			<div class="my-auto order-1">
+				<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">¿Cómo cambiamos <span class="text-r-green">vidas?</span></h1>
+				<div class="flex flex-col space-y-2">
 					<span>
 						Somos una organización sin fines de lucro en El Salvador que
 						acompaña a jóvenes en situación de vulnerabilidad,
@@ -59,15 +59,17 @@ const bannerItems = [
 						brindándoles formación integral a través de nuestro programa
 						Creando Esperanza.
 					</span>
-					Mediante capacitación técnica, desarrollo
-					de habilidades para la vida, acompañamiento psicológico y
-					vinculación con empresas aliadas, impulsamos la inserción
-					laboral y la construcción de proyectos de vida dignos,
-					promoviendo oportunidades reales para desarrollo personal y
-					profesional de nuestros jóvenes.
+					<span>
+						Mediante capacitación técnica, desarrollo
+						de habilidades para la vida, acompañamiento psicológico y
+						vinculación con empresas aliadas, impulsamos la inserción
+						laboral y la construcción de proyectos de vida dignos,
+						promoviendo oportunidades reales para desarrollo personal y
+						profesional de nuestros jóvenes.
+					</span>
 				</div>
 
-				<div class="flex space-x-4 mt-10">
+				<div class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4 mt-10">
 					<a class="border border-r-green text-white bg-r-green px-6 py-4 rounded-xl grow text-center">Nuestro impacto</a>
 					<SecondaryButton route="/creando-esperanza" text="Creando Esperanza"/>
 				</div>
@@ -75,36 +77,36 @@ const bannerItems = [
 		</section>
 
 		<section class="text-center my-32" id="nuestros-valores">
-			<h1 class="text-4xl font-bold mb-8">Nuestros <span class="text-r-green">valores</span></h1>
+			<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Nuestros <span class="text-r-green">valores</span></h1>
 			<p class="mb-16">Los principios que guían cada acción y decisión en nuestro compromiso con la juventud.</p>
 
-			<div class="grid grid-cols-7 gap-y-12 text-xl">
-				<div class="col-span-2 space-y-4">
+			<div class="grid grid-cols-2 md:grid-cols-7 gap-y-12 text-xl md:*:col-span-2 *:space-y-4">
+				<div>
 					<Medal class="mx-auto w-12 h-12"/>
 					<h2>Excelencia</h2>
 				</div>
 
-				<div class="col-span-2 col-start-3 space-y-4">
+				<div class="md:col-start-3">
 					<SquaresIntersect class="mx-auto w-12 h-12"/>
 					<h2>Transparencia</h2>
 				</div>
 
-				<div class="col-span-2 space-y-4">
+				<div>
 					<Sprout class="mx-auto w-12 h-12"/>
 					<h2>Resilencia</h2>
 				</div>
 
-				<div class="col-span-2 col-start-2 space-y-4">
+				<div class="md:col-start-2">
 					<HeartHandshake class="mx-auto w-12 h-12"/>
 					<h2>Solidaridad</h2>
 				</div>
 
-				<div class="col-span-2 space-y-4">
+				<div>
 					<Scale class="mx-auto w-12 h-12"/>
 					<h2>Integridad</h2>
 				</div>
 
-				<div class="col-span-2 space-y-4">
+				<div>
 					<Shapes class="mx-auto w-12 h-12"/>
 					<h2>Inclusión</h2>
 				</div>
@@ -112,14 +114,14 @@ const bannerItems = [
 		</section>
 
 		<section class="my-32" id="transformamos-vidas">
-			<h1 class="text-4xl font-bold mb-8">Transformamos <span class="text-r-green">vidas</span></h1>
-			<p class="w-3/4">
+			<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Transformamos <span class="text-r-green">vidas</span></h1>
+			<p class="md:w-3/4">
 				A través del patrocinio, las pasantías y el acceso al empleo, abrimos caminos para que
 				muchos jóvenes desarrollen su talento, fortalezcan su futuro y transformen su vida con
 				dignidad y propósito.
 			</p>
 
-			<div class="grid grid-cols-3 gap-8 mt-16 auto-rows-min">
+			<div class="grid lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-16 auto-rows-min">
 				<Card title="Patrocinio"
 					  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 					  image={homepagePasantia}
@@ -140,10 +142,10 @@ const bannerItems = [
 			</div>
 		</section>
 
-		<section class="my-32 grid grid-cols-2 gap-12" id="conoce-nuestro-impacto">
-			<Image src={groupEvent} class="rounded-2xl" alt="Fotografía grupal" layout='constrained' format='jpeg'/>
-			<div class="my-auto">
-				<h1 class="text-4xl font-bold mb-8">Nuestro <span class="text-r-green">impacto</span></h1>
+		<section class="my-32 grid md:grid-cols-2 gap-12" id="conoce-nuestro-impacto">
+			<Image src={groupEvent} class="rounded-2xl order-2" alt="Fotografía grupal" layout='constrained' format='jpeg'/>
+			<div class="my-auto order-1">
+				<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Nuestro <span class="text-r-green">impacto</span></h1>
 				<p class="mb-10">Se refleja en oportunidades que se convierten en resultados.
 					A lo largo de los años, Fundación Renacer ha acompañado a
 					cientos de jóvenes en su formación académica y su inserción
@@ -155,9 +157,23 @@ const bannerItems = [
 		</section>
 
 		<section class="my-32" id="aliados">
-			<h1 class="text-4xl font-bold mb-12">Nuestros <span class="text-r-green">aliados</span></h1>
+			<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Nuestros <span class="text-r-green">aliados</span></h1>
 
-			<swiper-container class="px-10 overflow-visible" slides-per-view="6" speed="500" loop="true" css-mode="true" autoplay navigation="true">
+			<swiper-container class="px-10 overflow-visible" speed="500" loop="true" css-mode="true" autoplay navigation="true"
+			                  breakpoints='{
+								"320": {
+									"slidesPerView": 3
+								},
+								"640": {
+									"slidesPerView": 4
+								},
+								"768": {
+									"slidesPerView": 5
+								},
+								"1024": {
+									"slidesPerView": 6
+								}
+							}'>
 				{partners.map((partner) => (
 					<swiper-slide class="my-auto">
 						<Image src={partner} alt='Logo' layout='fixed' class="h-auto w-40"/>
