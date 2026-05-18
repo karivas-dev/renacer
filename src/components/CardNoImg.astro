@@ -1,13 +1,13 @@
 ---
-import {Wrench} from "@lucide/astro";
+import { Wrench } from "@lucide/astro";
 
-const {title, description, icon: Icon} = Astro.props;
+const { title, description, icon: Icon } = Astro.props;
 ---
 
-<div class="bg-r-gray-800 p-6 rounded-xl space-y-4">
-    <div class="bg-r-green/25 w-fit p-3 rounded-lg">
-        {Icon && <Icon class="h-8 w-8 text-r-green"/>}
-    </div>
-    <h1 class="text-2xl font-bold">{ title }</h1>
-    <p>{ description }</p>
+<div class="bg-r-gray-800 space-y-4 rounded-xl p-6">
+  <div class="bg-r-green/25 w-fit rounded-lg p-3">
+    {Icon && <Icon class="text-r-green h-8 w-8" />}
+  </div>
+  <h1 class="text-2xl font-bold">{title}</h1>
+  <p>{description}</p>
 </div>

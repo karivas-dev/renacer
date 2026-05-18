@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-    --font-cabin: "Cabin", var(--font-sans);
-    --font-montserrat: "Montserrat", var(--font-sans);
-    --font-source-sans: "Source Sans 3", var(--font-sans);
+  --font-cabin: "Cabin", var(--font-sans);
+  --font-montserrat: "Montserrat", var(--font-sans);
+  --font-source-sans: "Source Sans 3", var(--font-sans);
 
-    --color-r-green: oklch(0.6726 0.1171 154.44);
-    --color-r-gold: oklch(0.8 0.15 72.54);
-    --color-r-gray-900: oklch(0.7115 0.0035 17.24);
-    --color-r-gray-800: oklch(0.934 0 0);
-    --color-r-gray-100: oklch(0.98 0 247.86);
+  --color-r-green: oklch(0.6726 0.1171 154.44);
+  --color-r-gold: oklch(0.8 0.15 72.54);
+  --color-r-gray-900: oklch(0.7115 0.0035 17.24);
+  --color-r-gray-800: oklch(0.934 0 0);
+  --color-r-gray-100: oklch(0.98 0 247.86);
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 section {
-    scroll-margin-top: 175px;
+  scroll-margin-top: 175px;
 }
 
 swiper-container {
-    --swiper-navigation-size: 32px;
-    --swiper-navigation-top-offset: 50%;
-    --swiper-navigation-sides-offset: -22px;
-    --swiper-navigation-color: oklch(0.6726 0.1171 154.44);
+  --swiper-navigation-size: 32px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: -22px;
+  --swiper-navigation-color: oklch(0.6726 0.1171 154.44);
 }

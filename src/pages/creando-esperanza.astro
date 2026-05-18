@@ -1,17 +1,18 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import {
-    Wrench,
-    BriefcaseBusiness,
-    Brain,
-    House,
-    FileSearchCorner,
-    FileUser,
-    HandshakeIcon,
-    Route,
-    BellDot, Speech
-} from '@lucide/astro';
+  Wrench,
+  BriefcaseBusiness,
+  Brain,
+  House,
+  FileSearchCorner,
+  FileUser,
+  HandshakeIcon,
+  Route,
+  BellDot,
+  Speech,
+} from "@lucide/astro";
 import DSC05038 from "@assets/hope/DSC05038.jpg";
 import DSC01806 from "@assets/hope/DSC01806.jpg";
 import DSC01769 from "@assets/hope/DSC01769.jpg";
@@ -21,99 +22,117 @@ import SecondaryButton from "../components/SecondaryButton.astro";
 import Footer from "../components/Footer.astro";
 
 const stepsBlock1 = [
-    { text: 'Visita a casas hogares', icon: House },
-    { text: 'Evaluación de candidatos por parte de casas hogares', icon: FileUser },
-    { text: 'Alianzas empresariales', icon: HandshakeIcon},
-    { text: 'Entrevistas psicológicas a candidatos', icon: Speech},
-]
+  { text: "Visita a casas hogares", icon: House },
+  {
+    text: "Evaluación de candidatos por parte de casas hogares",
+    icon: FileUser,
+  },
+  { text: "Alianzas empresariales", icon: HandshakeIcon },
+  { text: "Entrevistas psicológicas a candidatos", icon: Speech },
+];
 
 const stepsBlock2 = [
-    { text: 'Referencia a empresas', icon: FileSearchCorner},
-    { text: 'Segundas entrevistas RRHH de empresas con candidatos', icon: Speech},
-    { text: 'Notificación de ingreso', icon: BellDot},
-    { text: 'Notificación de ingreso', icon: Route}
-]
+  { text: "Referencia a empresas", icon: FileSearchCorner },
+  {
+    text: "Segundas entrevistas RRHH de empresas con candidatos",
+    icon: Speech,
+  },
+  { text: "Notificación de ingreso", icon: BellDot },
+  { text: "Notificación de ingreso", icon: Route },
+];
 ---
+
 <Layout>
-    <div class="grid grid-cols-7 gap-x-8 mx-24 mt-28">
-        <div class="col-span-3 my-auto">
-            <h1 class="text-4xl font-bold mb-8">¿Cómo cambiamos <span class="text-r-green">vidas?</span></h1>
-            <p>
-                Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más
-                oportunidades y esperanza.
-            </p>
-        </div>
-
-        <div class="col-span-2 flex items-center">
-            <Image src={DSC05038} class="rounded-2xl h-4/5 object-cover" alt="icon" />
-        </div>
-
-        <div class="col-span-2 space-y-6 my-auto">
-            <Image src={DSC01769} class="rounded-2xl" alt="icon" />
-            <Image src={DSC01806} class="rounded-2xl" alt="icon" />
-        </div>
+  <div class="mx-24 mt-28 grid grid-cols-7 gap-x-8">
+    <div class="col-span-3 my-auto">
+      <h1 class="mb-8 text-4xl font-bold">
+        ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
+      </h1>
+      <p>
+        Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más oportunidades y esperanza.
+      </p>
     </div>
 
-    <div class="my-32 mx-24">
-        <h1 class="text-4xl font-bold mb-12 text-center">Nuestros tres <span class="text-r-green">pilares</span></h1>
+    <div class="col-span-2 flex items-center">
+      <Image src={DSC05038} class="h-4/5 rounded-2xl object-cover" alt="icon" />
+    </div>
 
-        <p class="md:mx-24 text-center">
-            Nuestro trabajo se sostiene en tres pilares fundamentales que guían cada acción, fortalecen
-            nuestros programas y hacen posible transformar vidas de manera integral y sostenible.
-        </p>
+    <div class="col-span-2 my-auto space-y-6">
+      <Image src={DSC01769} class="rounded-2xl" alt="icon" />
+      <Image src={DSC01806} class="rounded-2xl" alt="icon" />
+    </div>
+  </div>
 
-        <div class="grid md:grid-cols-3 gap-4 mt-16">
-            <CardNoImg icon={ Wrench } title="PREPARACIÓN TÉCNICA"
-                       description="Capacitamos a nuestros jóvenes con clases de computación, cursos de asistencia
+  <div class="mx-24 my-32">
+    <h1 class="mb-12 text-center text-4xl font-bold">
+      Nuestros tres <span class="text-r-green">pilares</span>
+    </h1>
+
+    <p class="text-center md:mx-24">
+      Nuestro trabajo se sostiene en tres pilares fundamentales que guían cada acción, fortalecen nuestros programas y
+      hacen posible transformar vidas de manera integral y sostenible.
+    </p>
+
+    <div class="mt-16 grid gap-4 md:grid-cols-3">
+      <CardNoImg
+        icon={Wrench}
+        title="PREPARACIÓN TÉCNICA"
+        description="Capacitamos a nuestros jóvenes con clases de computación, cursos de asistencia
                     administrativa y atención al cliente; asimismo, brindamos talleres de finanzas personales,
                     liderazgo y habilidades blandas."
-            />
+      />
 
-            <CardNoImg icon={ Brain } title="ATENCIÓN PSICOLÓGICA"
-                       description="Cuidamos la salud mental de nuestros jóvenes con un continuo e individual seguimiento
+      <CardNoImg
+        icon={Brain}
+        title="ATENCIÓN PSICOLÓGICA"
+        description="Cuidamos la salud mental de nuestros jóvenes con un continuo e individual seguimiento
                         psicológico con terapias EMDR incluidas para casos específicos."
-            />
+      />
 
-            <CardNoImg icon={ BriefcaseBusiness } title="EMPLEABILIDAD"
-                       description="Colocamos en prácticas laborales a nuestros jóvenes, mediante nuestras empresas aliadas, para
+      <CardNoImg
+        icon={BriefcaseBusiness}
+        title="EMPLEABILIDAD"
+        description="Colocamos en prácticas laborales a nuestros jóvenes, mediante nuestras empresas aliadas, para
                         que puedan adquirir experiencia laboral. Al finalizar el programa, les garantizamos un empleo."
-            />
-        </div>
+      />
+    </div>
+  </div>
+
+  <div class="mx-24 grid grid-cols-7 gap-x-16">
+    <div class="col-span-3 my-auto">
+      <h1 class="mb-12 text-4xl font-bold">
+        ¿Cómo <span class="text-r-green">funcionamos?</span>
+      </h1>
+
+      <p>
+        Nuestro programa sigue un proceso estructurado que garantiza una selección responsable y un acompañamiento
+        integral a cada joven. A través de alianzas, evaluaciones y seguimiento, construimos oportunidades reales para
+        su desarrollo personal, académico y laboral.
+      </p>
     </div>
 
-    <div class="grid grid-cols-7 gap-x-16 mx-24">
-        <div class="col-span-3 my-auto">
-            <h1 class="text-4xl font-bold mb-12">¿Cómo <span class="text-r-green">funcionamos?</span></h1>
-
-            <p>
-                Nuestro programa sigue un proceso estructurado que garantiza una selección responsable y un acompañamiento integral
-                a cada joven. A través de alianzas, evaluaciones y seguimiento, construimos oportunidades reales para su desarrollo
-                personal, académico y laboral.
-            </p>
-        </div>
-
-        <div class="col-span-2 space-y-8 *:space-y-3">
-            {stepsBlock1.map((step, index) => (
-                <StepItem text={step.text} icon={step.icon} id={index+1}/>
-            ))}
-        </div>
-
-        <div class="col-span-2 space-y-8 *:space-y-3">
-            {stepsBlock2.map((step, index) => (
-                    <StepItem text={step.text} icon={step.icon} id={index+5 }/>
-            ))}
-        </div>
+    <div class="col-span-2 space-y-8 *:space-y-3">
+      {stepsBlock1.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 1} />)}
     </div>
 
-    <div class="bg-r-green my-32 py-32 px-24 text-center text-white">
-        <h1 class="text-4xl font-bold mb-12">¡Juntos creamos <span class="text-r-gold">esperanza!</span></h1>
-
-        <p class="md:mx-24 mb-12">Nuestra misión es transformar la vida de niños y jóvenes abandonados viviendo en lugares
-            de acogida públicos y privados, entrenándolos en múltiples disciplinas, proveyéndoles de
-            apoyo psicológico y emocional, además de garantizarles un empleo.</p>
-
-        <SecondaryButton route="/sobre-nosotros" text="¡Quiero unirme!"/>
+    <div class="col-span-2 space-y-8 *:space-y-3">
+      {stepsBlock2.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 5} />)}
     </div>
+  </div>
 
-    <Footer/>
+  <div class="bg-r-green my-32 px-24 py-32 text-center text-white">
+    <h1 class="mb-12 text-4xl font-bold">
+      ¡Juntos creamos <span class="text-r-gold">esperanza!</span>
+    </h1>
+
+    <p class="mb-12 md:mx-24">
+      Nuestra misión es transformar la vida de niños y jóvenes abandonados viviendo en lugares de acogida públicos y
+      privados, entrenándolos en múltiples disciplinas, proveyéndoles de apoyo psicológico y emocional, además de
+      garantizarles un empleo.
+    </p>
+
+    <SecondaryButton route="/sobre-nosotros" text="¡Quiero unirme!" />
+  </div>
+
+  <Footer />
 </Layout>

@@ -1,17 +1,25 @@
 ---
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 
-const {title, description, image, icon: Icon} = Astro.props;
+const { title, description, image, icon: Icon } = Astro.props;
 ---
 
-<div class="even:bg-r-green odd:bg-white group flex flex-col justify-end rounded-xl shadow-2xl p-4 md:p-6 even:text-white">
-    <div class="space-y-4 group-odd:mb-4 group-even:mt-4 md:group-odd:mb-8 md:group-even:mt-8 group-even:order-last">
-        <div class="flex items-center text-2xl md:text-3xl font-bold ml-2 space-x-4">
-            {Icon && <Icon class="w-12 h-12 p-2 group-odd:bg-r-green/25 group-even:bg-[#d4eadc] text-r-green rounded-lg"/>}
-            <span class="font-source-sans">{ title }</span>
-        </div>
-        <p> { description } </p>
+<div
+  class="even:bg-r-green group flex flex-col justify-end rounded-xl p-4 shadow-2xl odd:bg-white even:text-white md:p-6"
+>
+  <div class="space-y-4 group-odd:mb-4 group-even:order-last group-even:mt-4 md:group-odd:mb-8 md:group-even:mt-8">
+    <div class="ml-2 flex items-center space-x-4 text-2xl font-bold md:text-3xl">
+      {Icon && <Icon class="group-odd:bg-r-green/25 text-r-green h-12 w-12 rounded-lg p-2 group-even:bg-[#d4eadc]" />}
+      <span class="font-source-sans">{title}</span>
     </div>
+    <p>{description}</p>
+  </div>
 
-    <Image src={ image } class="rounded-xl h-105 object-cover group-even:order-first" alt="Card image" layout='constrained' format='jpeg'/>
+  <Image
+    src={image}
+    class="h-105 rounded-xl object-cover group-even:order-first"
+    alt="Card image"
+    layout="constrained"
+    format="jpeg"
+  />
 </div>

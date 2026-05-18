@@ -1,10 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import { Medal, HeartHandshake, Scale, Sprout, Shapes, SquaresIntersect, GraduationCap, BriefcaseBusiness, Handshake } from '@lucide/astro'
-import homepagePasantia from '@assets/home/homepage-pasantia.jpg';
-import banner from '@assets/home/DSC07345.jpg';
-import groupClass from '@assets/home/group-class.jpg';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import {
+  Medal,
+  HeartHandshake,
+  Scale,
+  Sprout,
+  Shapes,
+  SquaresIntersect,
+  GraduationCap,
+  BriefcaseBusiness,
+  Handshake,
+} from "@lucide/astro";
+import homepagePasantia from "@assets/home/homepage-pasantia.jpg";
+import banner from "@assets/home/DSC07345.jpg";
+import groupClass from "@assets/home/group-class.jpg";
 import groupEvent from "@assets/home/DSC07175.jpg";
 import grupoRoble from "@assets/home/logos/GrupoRoble.png";
 import hotelRealIntercontinental from "@assets/home/logos/hotelRealIntercontinental.png";
@@ -15,152 +25,171 @@ import autofacil from "@assets/home/logos/Autofacil.jpg";
 import gardenTowers from "@assets/home/logos/GardenTowers.png";
 import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
-import SecondaryButton from '../components/SecondaryButton.astro';
+import SecondaryButton from "../components/SecondaryButton.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 
-const partners = [
-	grupoRoble, hotelRealIntercontinental, quality, solaire, acsa, autofacil, gardenTowers
-];
+const partners = [grupoRoble, hotelRealIntercontinental, quality, solaire, acsa, autofacil, gardenTowers];
 
 const bannerItems = [
-	{
-		img: banner,
-		firstText: 'Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.',
-		secondText: 'Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.'
-	},
-	{
-		img: banner,
-		firstText: 'Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.',
-		secondText: 'Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.'
-	}
+  {
+    img: banner,
+    firstText:
+      "Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.",
+    secondText:
+      "Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.",
+  },
+  {
+    img: banner,
+    firstText:
+      "Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.",
+    secondText:
+      "Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.",
+  },
 ];
 ---
 
 <Layout position="fixed">
-	<swiper-container slides-per-view="1" autoplay="true" autoplay-delay="10000" loop="true" css-mode="true" >
-		{bannerItems.map((item) => (
-			<swiper-slide class="my-auto">
-					<Banner firstText={ item.firstText } secondText={ item.secondText }/>
-			</swiper-slide>
-		))}
-	</swiper-container>
+  <swiper-container slides-per-view="1" autoplay="true" autoplay-delay="10000" loop="true" css-mode="true">
+    {
+      bannerItems.map((item) => (
+        <swiper-slide class="my-auto">
+          <Banner firstText={item.firstText} secondText={item.secondText} />
+        </swiper-slide>
+      ))
+    }
+  </swiper-container>
 
-	<main class="mx-6 md:mx-20">
-		<section class="grid md:grid-cols-2 gap-12 my-32" id="como-impactamos">
-			<Image src={groupClass} class="rounded-2xl order-2" alt="Foto grupal" layout='constrained' format='jpeg'/>
-			<div class="my-auto order-1">
-				<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">¿Cómo cambiamos <span class="text-r-green">vidas?</span></h1>
-				<div class="flex flex-col space-y-2">
-					<span>
-						Somos una organización sin fines de lucro en El Salvador que
-						acompaña a jóvenes en situación de vulnerabilidad,
-						especialmente a quienes provienen de casas hogares,
-						brindándoles formación integral a través de nuestro programa
-						Creando Esperanza.
-					</span>
-					<span>
-						Mediante capacitación técnica, desarrollo
-						de habilidades para la vida, acompañamiento psicológico y
-						vinculación con empresas aliadas, impulsamos la inserción
-						laboral y la construcción de proyectos de vida dignos,
-						promoviendo oportunidades reales para desarrollo personal y
-						profesional de nuestros jóvenes.
-					</span>
-				</div>
+  <main class="mx-6 md:mx-20">
+    <section class="my-32 grid gap-12 md:grid-cols-2" id="como-impactamos">
+      <Image src={groupClass} class="order-2 rounded-2xl" alt="Foto grupal" layout="constrained" format="jpeg" />
+      <div class="order-1 my-auto">
+        <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
+          ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
+        </h1>
+        <div class="flex flex-col space-y-2">
+          <span>
+            Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de
+            vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través
+            de nuestro programa Creando Esperanza.
+          </span>
+          <span>
+            Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y
+            vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida
+            dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.
+          </span>
+        </div>
 
-				<div class="flex flex-col space-y-3 md:space-y-0 md:flex-row md:space-x-4 mt-10">
-					<a class="border border-r-green text-white bg-r-green px-6 py-4 rounded-xl grow text-center">Nuestro impacto</a>
-					<SecondaryButton route="/creando-esperanza" text="Creando Esperanza"/>
-				</div>
-			</div>
-		</section>
+        <div class="mt-10 flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+          <a class="border-r-green bg-r-green grow rounded-xl border px-6 py-4 text-center text-white"
+            >Nuestro impacto</a
+          >
+          <SecondaryButton route="/creando-esperanza" text="Creando Esperanza" />
+        </div>
+      </div>
+    </section>
 
-		<section class="text-center my-32" id="nuestros-valores">
-			<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Nuestros <span class="text-r-green">valores</span></h1>
-			<p class="mb-16">Los principios que guían cada acción y decisión en nuestro compromiso con la juventud.</p>
+    <section class="my-32 text-center" id="nuestros-valores">
+      <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
+        Nuestros <span class="text-r-green">valores</span>
+      </h1>
+      <p class="mb-16">Los principios que guían cada acción y decisión en nuestro compromiso con la juventud.</p>
 
-			<div class="grid grid-cols-2 md:grid-cols-7 gap-y-12 text-xl md:*:col-span-2 *:space-y-4">
-				<div>
-					<Medal class="mx-auto w-12 h-12"/>
-					<h2>Excelencia</h2>
-				</div>
+      <div class="grid grid-cols-2 gap-y-12 text-xl *:space-y-4 md:grid-cols-7 md:*:col-span-2">
+        <div>
+          <Medal class="mx-auto h-12 w-12" />
+          <h2>Excelencia</h2>
+        </div>
 
-				<div class="md:col-start-3">
-					<SquaresIntersect class="mx-auto w-12 h-12"/>
-					<h2>Transparencia</h2>
-				</div>
+        <div class="md:col-start-3">
+          <SquaresIntersect class="mx-auto h-12 w-12" />
+          <h2>Transparencia</h2>
+        </div>
 
-				<div>
-					<Sprout class="mx-auto w-12 h-12"/>
-					<h2>Resilencia</h2>
-				</div>
+        <div>
+          <Sprout class="mx-auto h-12 w-12" />
+          <h2>Resilencia</h2>
+        </div>
 
-				<div class="md:col-start-2">
-					<HeartHandshake class="mx-auto w-12 h-12"/>
-					<h2>Solidaridad</h2>
-				</div>
+        <div class="md:col-start-2">
+          <HeartHandshake class="mx-auto h-12 w-12" />
+          <h2>Solidaridad</h2>
+        </div>
 
-				<div>
-					<Scale class="mx-auto w-12 h-12"/>
-					<h2>Integridad</h2>
-				</div>
+        <div>
+          <Scale class="mx-auto h-12 w-12" />
+          <h2>Integridad</h2>
+        </div>
 
-				<div>
-					<Shapes class="mx-auto w-12 h-12"/>
-					<h2>Inclusión</h2>
-				</div>
-			</div>
-		</section>
+        <div>
+          <Shapes class="mx-auto h-12 w-12" />
+          <h2>Inclusión</h2>
+        </div>
+      </div>
+    </section>
 
-		<section class="my-32" id="transformamos-vidas">
-			<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Transformamos <span class="text-r-green">vidas</span></h1>
-			<p class="md:w-3/4">
-				A través del patrocinio, las pasantías y el acceso al empleo, abrimos caminos para que
-				muchos jóvenes desarrollen su talento, fortalezcan su futuro y transformen su vida con
-				dignidad y propósito.
-			</p>
+    <section class="my-32" id="transformamos-vidas">
+      <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
+        Transformamos <span class="text-r-green">vidas</span>
+      </h1>
+      <p class="md:w-3/4">
+        A través del patrocinio, las pasantías y el acceso al empleo, abrimos caminos para que muchos jóvenes
+        desarrollen su talento, fortalezcan su futuro y transformen su vida con dignidad y propósito.
+      </p>
 
-			<div class="grid lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-16 auto-rows-min">
-				<Card title="Patrocinio"
-					  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-					  image={homepagePasantia}
-					  icon={Handshake}
-				/>
+      <div class="mt-8 grid auto-rows-min gap-6 md:mt-16 md:gap-8 lg:grid-cols-3">
+        <Card
+          title="Patrocinio"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          image={homepagePasantia}
+          icon={Handshake}
+        />
 
-				<Card title="Pasantías"
-				      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-				      image={homepagePasantia}
-				      icon={GraduationCap}
-				/>
+        <Card
+          title="Pasantías"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          image={homepagePasantia}
+          icon={GraduationCap}
+        />
 
-				<Card title="Empleo"
-				      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-				      image={homepagePasantia}
-				      icon={BriefcaseBusiness}
-				/>
-			</div>
-		</section>
+        <Card
+          title="Empleo"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          image={homepagePasantia}
+          icon={BriefcaseBusiness}
+        />
+      </div>
+    </section>
 
-		<section class="my-32 grid md:grid-cols-2 gap-12" id="conoce-nuestro-impacto">
-			<Image src={groupEvent} class="rounded-2xl order-2" alt="Fotografía grupal" layout='constrained' format='jpeg'/>
-			<div class="my-auto order-1">
-				<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Nuestro <span class="text-r-green">impacto</span></h1>
-				<p class="mb-10">Se refleja en oportunidades que se convierten en resultados.
-					A lo largo de los años, Fundación Renacer ha acompañado a
-					cientos de jóvenes en su formación académica y su inserción
-					laboral, generando mejoras reales en su calidad de vida y
-					fortaleciendo su proyección profesional.</p>
+    <section class="my-32 grid gap-12 md:grid-cols-2" id="conoce-nuestro-impacto">
+      <Image src={groupEvent} class="order-2 rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
+      <div class="order-1 my-auto">
+        <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
+          Nuestro <span class="text-r-green">impacto</span>
+        </h1>
+        <p class="mb-10">
+          Se refleja en oportunidades que se convierten en resultados. A lo largo de los años, Fundación Renacer ha
+          acompañado a cientos de jóvenes en su formación académica y su inserción laboral, generando mejoras reales en
+          su calidad de vida y fortaleciendo su proyección profesional.
+        </p>
 
-					<SecondaryButton route="/sobre-nosotros" text="Conoce nuestro impacto"/>
-			</div>
-		</section>
+        <SecondaryButton route="/sobre-nosotros" text="Conoce nuestro impacto" />
+      </div>
+    </section>
 
-		<section class="my-32" id="aliados">
-			<h1 class="text-3xl md:text-4xl font-bold mb-4 md:mb-8">Nuestros <span class="text-r-green">aliados</span></h1>
+    <section class="my-32" id="aliados">
+      <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
+        Nuestros <span class="text-r-green">aliados</span>
+      </h1>
 
-			<swiper-container class="px-10 overflow-visible" speed="500" loop="true" css-mode="true" autoplay navigation="true"
-			                  breakpoints='{
+      <swiper-container
+        class="overflow-visible px-10"
+        speed="500"
+        loop="true"
+        css-mode="true"
+        autoplay
+        navigation="true"
+        breakpoints='{
 								"320": {
 									"slidesPerView": 3
 								},
@@ -173,15 +202,18 @@ const bannerItems = [
 								"1024": {
 									"slidesPerView": 6
 								}
-							}'>
-				{partners.map((partner) => (
-					<swiper-slide class="my-auto">
-						<Image src={partner} alt='Logo' layout='fixed' class="h-auto w-40"/>
-					</swiper-slide>
-				))}
-			</swiper-container>
-		</section>
-	</main>
+							}'
+      >
+        {
+          partners.map((partner) => (
+            <swiper-slide class="my-auto">
+              <Image src={partner} alt="Logo" layout="fixed" class="h-auto w-40" />
+            </swiper-slide>
+          ))
+        }
+      </swiper-container>
+    </section>
+  </main>
 
-	<Footer/>
+  <Footer />
 </Layout>
