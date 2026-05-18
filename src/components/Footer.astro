@@ -3,11 +3,14 @@ import Link from "./Link.astro";
 import Logo from "@assets/home/Logo-Renacer-SF.png";
 import {Image} from "astro:assets";
 import SecondaryButton from "./SecondaryButton.astro";
+import Instagram from "./icons/Instagram.astro";
+import Facebook from "./icons/Facebook.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
 ---
 
-<div class="m-4">
-    <footer class="flex justify-between footer bg-white shadow-2xl px-12 py-8  w-full rounded-lg text-sm text-r-gray-900">
-        <div class="flex justify-between *:flex *:flex-col space-x-8">
+<div class="m-4 bg-white shadow-2xl px-12 py-8 rounded-lg text-r-gray-900">
+    <footer class="flex justify-between footer  w-full text-sm mb-10">
+        <div class="hidden md:flex md:justify-between md:*:flex md:*:flex-col md:space-x-8">
             <div>
                 <Link href="/#quienes-somos">Inicio</Link>
                 <Link href="/#como-impactamos">¿Cómo impactamos vidas?</Link>
@@ -32,13 +35,30 @@ import SecondaryButton from "./SecondaryButton.astro";
         </div>
 
         <div>
-            <div class="mb-20">
-                <h1 class="text-3xl text-black font-bold">Contáctanos</h1>
+            <div class="mb-10">
+                <h1 class="text-3xl text-black font-bold mb-1">Contáctanos</h1>
                 <p>contacto@fundacionrenacer.com.sv</p>
                 <p>2287-8714</p>
+                <div class="flex mt-4">
+                    <a class="" href="https://www.linkedin.com/company/fundaci%C3%B3n-renacer-el-salvador/?originalSubdomain=sv" target="_blank">
+                        <LinkedIn class="size-14"/>
+                    </a>
+                    <a href="https://www.facebook.com/renacer/" target="_blank">
+                        <Facebook class="size-10"/>
+                    </a>
+                    <a class="ml-4" href="https://www.instagram.com/Renacer/" target="_blank">
+                        <Instagram class="size-10"/>
+                    </a>
+                </div>
             </div>
 
             <SecondaryButton route="/creando-esperanza" text="Creando Esperanza"/>
         </div>
     </footer>
+    <Image src={Logo} alt='Logo Fundación Renacer' width="125" layout="fixed"/>
+    <hr class="h-px my-6 bg-r-gray-900 border-0">
+    <div class="flex items-center justify-between text-xs">
+        <span>Desarrollado por <a href="https://github.com/karivas-dev" target="_blank" class="hover:font-bold">Karen Rivas</a></span>
+        <span>© 2026 Fundación Renacer</span>
+    </div>
 </div>
