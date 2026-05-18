@@ -1,6 +1,7 @@
 ---
 import "../assets/app.css";
 import Nav from "../components/Nav.astro";
+import NavVue from "../components/Nav.vue";
 import {twMerge} from "tailwind-merge";
 
 const { position = "sticky" } = Astro.props;
@@ -24,7 +25,7 @@ const { position = "sticky" } = Astro.props;
 	</head>
 	<body class="bg-r-gray-100 font-montserrat">
 		<div class={twMerge(position, "top-0 p-4 w-full z-40")}>
-			<Nav/>
+			<NavVue client:load/>
 		</div>
 		<slot />
 	</body>
