@@ -8,7 +8,7 @@ import Facebook from "./icons/Facebook.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 ---
 
-<div class="text-r-gray-900 m-4 rounded-lg bg-white px-12 py-8 shadow-2xl">
+<div class="text-r-gray-900 m-4 rounded-lg bg-white px-16 py-12 shadow-2xl">
   <footer class="footer mb-10 flex w-full justify-between text-sm">
     <div class="hidden md:flex md:justify-between md:space-x-8 md:*:flex md:*:flex-col">
       <div>
@@ -44,13 +44,14 @@ import LinkedIn from "./icons/LinkedIn.astro";
             class=""
             href="https://www.linkedin.com/company/fundaci%C3%B3n-renacer-el-salvador/?originalSubdomain=sv"
             target="_blank"
+            aria-label="Visit Fundación Renacer on LinkedIn"
           >
             <LinkedIn class="size-14" />
           </a>
-          <a href="https://www.facebook.com/renacer/" target="_blank">
+          <a href="https://www.facebook.com/renacer/" target="_blank" aria-label="Visit Fundación Renacer on Facebook">
             <Facebook class="size-10" />
           </a>
-          <a class="ml-4" href="https://www.instagram.com/Renacer/" target="_blank">
+          <a class="ml-4" href="https://www.instagram.com/Renacer/" target="_blank" aria-label="Visit Fundación Renacer on Instagram">
             <Instagram class="size-10" />
           </a>
         </div>
@@ -61,10 +62,9 @@ import LinkedIn from "./icons/LinkedIn.astro";
   </footer>
   <Image src={Logo} alt="Logo Fundación Renacer" width="125" layout="fixed" />
   <hr class="bg-r-gray-900 my-6 h-px border-0" />
-  <div class="flex items-center justify-between text-xs">
+  <div class="md:flex items-center justify-between text-xs">
     <span
-      >Desarrollado por <a href="https://github.com/karivas-dev" target="_blank" class="hover:font-bold">Karen Rivas</a
-      ></span
+      >Desarrollado por <a href="https://github.com/karivas-dev" target="_blank" class="hover:font-bold">Karen Rivas</a></span
     >
     <span>© 2026 Fundación Renacer</span>
   </div>

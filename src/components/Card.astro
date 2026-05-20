@@ -18,7 +18,7 @@ const { title, description, image, icon: Icon } = Astro.props;
   <Image
     src={image}
     class="h-105 rounded-xl object-cover group-even:order-first"
-    alt="Card image"
+    alt={`${title} image`}
     layout="constrained"
     format="jpeg"
   />
