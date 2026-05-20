@@ -1,8 +1,7 @@
 ---
 import "../assets/app.css";
-import Nav from "../components/Nav.astro";
-import NavVue from "../components/Nav.vue";
 import { twMerge } from "tailwind-merge";
+import Navbar from "../components/Navbar.astro";
 
 const { position = "sticky" } = Astro.props;
 ---
@@ -34,9 +33,10 @@ const { position = "sticky" } = Astro.props;
   </head>
   <body class="bg-r-gray-100 font-montserrat">
     <div class={twMerge(position, "top-0 p-4 w-full z-40")}>
-      <NavVue client:load />
+      <Navbar />
     </div>
     <slot />
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+  <!-- External Swiper library loaded from CDN. Consider using npm package + integrity hashing for production. -->
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"><\/script>
 </html>

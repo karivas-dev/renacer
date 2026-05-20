@@ -5,7 +5,7 @@ const { img, firstText, secondText, title } = Astro.props;
 ---
 
 <div class="relative h-screen w-full" id="quienes-somos">
-  <Image src={img} class="h-screen min-w-screen object-cover" alt={title.replace(/<[^>]*>/g, '') || "Fundación Renacer banner"} layout="full-width" format="jpeg" />
+  <Image src={img} class="h-screen min-w-screen object-cover" alt={title.replace(/<[^>]*>/g, '') || "Fundación Renacer banner"} layout="full-width" sizes="(max-width: 768px) 100vw, 100vw" format="jpeg" />
   <div class="absolute bottom-0 flex h-5/10 flex-col justify-end bg-linear-to-t from-neutral-950 p-6 text-white">
     <h1 class="mb-8 text-4xl font-bold" set:html={title}></h1>
 
