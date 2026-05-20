@@ -1,20 +1,21 @@
 ---
 import { twMerge } from "tailwind-merge";
 
-const { href, class: className } = Astro.props;
+const { href, class: className, ...props } = Astro.props;
 
-const clean = (path) => path.replace(/\/$/, "") || "/";
+const clean = (path: string) => path.replace(/\/$/, "") || "/";
 
 const basePath = clean(import.meta.env.BASE_URL);
 const currentPath = clean(Astro.url.pathname);
 const finalHref = clean(`${basePath === "/" ? "" : basePath}${href}`);
 
-const isActive = (string) => (currentPath === finalHref ? string : null);
+const isActive = (string: string) => (currentPath === finalHref ? string : null);
 ---
 
 <a
   href={finalHref}
   class={twMerge("hover:text-r-green", isActive("text-r-green font-bold"), className)}
+  {...props}
   data-astro-prefetch
 >
   <slot />

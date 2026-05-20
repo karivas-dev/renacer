@@ -15,7 +15,7 @@ import {
 } from "@lucide/astro";
 import DSC05038 from "@assets/hope/DSC05038.jpg";
 import DSC01806 from "@assets/hope/DSC01806.jpg";
-import DSC01769 from "@assets/hope/DSC01769.jpg";
+import DSC09980 from "@assets/hope/DSC09980.jpg";
 import CardNoImg from "../components/CardNoImg.astro";
 import StepItem from "../components/StepItem.astro";
 import SecondaryButton from "../components/SecondaryButton.astro";
@@ -43,7 +43,7 @@ const stepsBlock2 = [
 ---
 
 <Layout>
-  <div class="mx-24 mt-28 grid grid-cols-7 gap-x-8">
+  <div class="mx-6 md:mx-20 mt-10 md:mt-28 grid md:grid-cols-7 md:gap-x-8">
     <div class="col-span-3 my-auto">
       <h1 class="mb-8 text-4xl font-bold">
         ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
@@ -53,18 +53,18 @@ const stepsBlock2 = [
       </p>
     </div>
 
-    <div class="col-span-2 flex items-center">
+    <div class="col-span-3 md:col-span-2 flex items-center">
       <Image src={DSC05038} class="h-4/5 rounded-2xl object-cover" alt="icon" />
     </div>
 
-    <div class="col-span-2 my-auto space-y-6">
-      <Image src={DSC01769} class="rounded-2xl" alt="icon" />
+    <div class="hidden md:block col-span-2 my-auto space-y-6">
+      <Image src={DSC09980} class="rounded-2xl" alt="icon" />
       <Image src={DSC01806} class="rounded-2xl" alt="icon" />
     </div>
   </div>
 
-  <div class="mx-24 my-32">
-    <h1 class="mb-12 text-center text-4xl font-bold">
+  <div class="mx-6 md:mx-20 my-32">
+    <h1 class="mb-6 md:mb-12 text-center text-4xl font-bold">
       Nuestros tres <span class="text-r-green">pilares</span>
     </h1>
 
@@ -98,13 +98,13 @@ const stepsBlock2 = [
     </div>
   </div>
 
-  <div class="mx-24 grid grid-cols-7 gap-x-16">
-    <div class="col-span-3 my-auto">
-      <h1 class="mb-12 text-4xl font-bold">
+  <div class="mx-6 md:mx-20 grid md:grid-cols-7 gap-x-16">
+    <div class="md:col-span-3 my-auto">
+      <h1 class="mb-6 md:mb-12 text-4xl font-bold">
         ¿Cómo <span class="text-r-green">funcionamos?</span>
       </h1>
 
-      <p>
+      <p class="mb-8 md:mb-0">
         Nuestro programa sigue un proceso estructurado que garantiza una selección responsable y un acompañamiento
         integral a cada joven. A través de alianzas, evaluaciones y seguimiento, construimos oportunidades reales para
         su desarrollo personal, académico y laboral.
@@ -120,9 +120,9 @@ const stepsBlock2 = [
     </div>
   </div>
 
-  <div class="bg-r-green my-32 px-24 py-32 text-center text-white">
+  <div class="bg-r-green my-32 px-8 md:px-24  py-32 text-center text-white">
     <h1 class="mb-12 text-4xl font-bold">
-      ¡Juntos creamos <span class="text-r-gold">esperanza!</span>
+      ¡Juntos creamos esperanza!
     </h1>
 
     <p class="mb-12 md:mx-24">
@@ -131,7 +131,9 @@ const stepsBlock2 = [
       garantizarles un empleo.
     </p>
 
-    <SecondaryButton route="/sobre-nosotros" text="¡Quiero unirme!" />
+    <a href="/unete" class="border-white grow rounded-xl border px-6 py-4 text-center text-white hover:text-r-green hover:bg-white">
+      ¡Quiero unirme!
+    </a>
   </div>
 
   <Footer />

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@custom-variant open (&:where([data-state="open"] *));
+@custom-variant closed (&:where([data-state="closed"] *));
+
 @theme {
   --font-cabin: "Cabin", var(--font-sans);
   --font-montserrat: "Montserrat", var(--font-sans);
@@ -23,6 +26,7 @@ section {
 swiper-container {
   --swiper-navigation-size: 32px;
   --swiper-navigation-top-offset: 50%;
-  --swiper-navigation-sides-offset: -22px;
+  --swiper-navigation-sides-offset: 0px;
   --swiper-navigation-color: oklch(0.6726 0.1171 154.44);
 }
+
