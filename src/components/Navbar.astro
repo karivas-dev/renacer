@@ -29,13 +29,13 @@ const navLinks = [
       }
     </nav>
 
-    <button class="md:hidden" aria-label="Toggle menu" type="button" data-nav-toggle>
+    <button class="md:hidden" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false" type="button" data-nav-toggle>
       <Menu class="open:hidden" size={28} />
       <X class="closed:hidden" size={28} />
     </button>
   </div>
 
-  <div class="h-0 overflow-hidden md:hidden" id="mobileMenu">
+  <div class="h-0 overflow-hidden md:hidden" id="mobileMenu" aria-hidden="true">
     <nav class="mt-4 flex flex-col space-y-4 border-t border-r-gray-800 pt-4">
       {
         navLinks.map((link) => (
@@ -48,11 +48,12 @@ const navLinks = [
   </div>
 </header>
 
-<script>
+<script type="module">
   import gsap from "gsap";
 
   const header = document.querySelector("#nav");
   const toggleButtons = document.querySelectorAll("[data-nav-toggle]");
+  const toggleButton = document.querySelector("button[data-nav-toggle]");
   const mobileMenu = document.querySelector("#mobileMenu");
   const mobileLinks = mobileMenu?.querySelectorAll("a");
 
@@ -62,6 +63,8 @@ const navLinks = [
     const isOpen = header?.getAttribute("data-state") === "open";
 
     header?.setAttribute("data-state", isOpen ? "closed" : "open");
+    toggleButton?.setAttribute("aria-expanded", isOpen ? "false" : "true");
+    mobileMenu?.setAttribute("aria-hidden", isOpen ? "true" : "false");
 
     if (!isOpen) {
       gsap.fromTo(
