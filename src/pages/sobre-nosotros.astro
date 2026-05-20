@@ -3,26 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import DSC01734 from "@assets/aboutUs/DSC01734.JPG";
 import { Image } from "astro:assets";
 import SecondaryButton from "../components/SecondaryButton.astro";
-import Nav from "../components/Nav.astro";
 import { CircleDollarSign, GraduationCap, Headset, Languages, UsersRound, MapPinHouse } from "@lucide/astro";
 import Timeline from "../components/Timeline.astro";
-import { VisSingleContainer, VisDonut, VisBulletLegend } from "@unovis/vue";
+import { VisDonut } from "@unovis/vue";
 import PieChart from "../components/PieChart.vue";
 import Footer from "../components/Footer.astro";
-
-const genderChart = [
-  { key: "Mujeres", value: "65%" },
-  { key: "Hombres", value: "35%" },
-];
-
-const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
-  name: genderChart.key.charAt(0).toUpperCase() + genderChart.key.slice(1),
-}));
 ---
 
 <Layout>
-  <section class="mx-32 my-20" id="conoce-nuestra-historia">
-    <div class="grid grid-cols-2 gap-12">
+  <section class="mx-6 md:mx-32 my-20" id="conoce-nuestra-historia">
+    <div class="grid md:grid-cols-2 gap-12">
       <Image src={DSC01734} class="rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
       <div class="my-auto">
         <h1 class="mb-8 text-4xl font-bold">
@@ -33,12 +23,12 @@ const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
           Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más oportunidades y esperanza.
         </p>
 
-        <SecondaryButton route="/sobre-nosotros" text="Conoce nuestra historia" />
+        <SecondaryButton route="/sobre-nosotros#nuestra-historia" text="Conoce nuestra historia" />
       </div>
     </div>
   </section>
 
-  <section class="mx-32 grid grid-cols-3 gap-12" id="nuestro-impacto">
+  <section class="mx-6 md:mx-32 grid md:grid-cols-3 gap-12" id="nuestro-impacto">
     <div class="col-span-2">
       <h1 class="mb-8 text-4xl font-bold">
         Nuestro <span class="text-r-green">impacto</span>
@@ -48,19 +38,19 @@ const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
         con más oportunidades.
       </p>
 
-      <div class="mt-6 flex space-x-16">
-        <div class="flex items-center space-x-4">
-          <UsersRound class="h-12 w-12" />
-          <div class="text-center">
-            <h1 class="text-6xl font-bold">+450</h1>
+      <div class="mt-6 flex md:space-x-16">
+        <div class="flex items-center md:space-x-4">
+          <UsersRound class="h-8 w-8 md:h-12 md:w-12" />
+          <div class="text-center text-sm">
+            <h1 class="text-3xl md:text-6xl font-bold">+450</h1>
             <p>jóvenes beneficiados</p>
           </div>
         </div>
 
-        <div class="flex items-center space-x-4">
-          <MapPinHouse class="h-12 w-12" />
+        <div class="flex items-center space-x-4 text-sm">
+          <MapPinHouse class="h-8 w-8 md:h-12 md:w-12" />
           <div class="text-center">
-            <h1 class="text-6xl font-bold">2</h1>
+            <h1 class="text-3xl md:text-6xl font-bold">2</h1>
             <p>sedes</p>
           </div>
           <div>
@@ -75,19 +65,31 @@ const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
     <div class="min-h-80">
       <PieChart
         data={[
-          { key: "names", value: 1396 },
-          { key: "cool", value: 928 },
-          { key: "alphanumeric", value: 864 },
-          { key: "fluffy", value: 518 },
-          { key: "nerdy", value: 294 },
-          { key: "other", value: 916 },
+          { key: "Hombres", value: 35, color: '#53a575'},
+          { key: "Mujeres", value: 65, color: '#a29f9f' },
+        ]}
+
+        annotations= {[
+          {
+              content: 'Mujeres',
+              x: 25,
+              y: 10,
+              subject: { x: 100, y: 50 }
+          },
+          {
+              content: 'Hombres',
+              x: '350px',
+              y: '20px',
+              textAlign: 'right',
+              subject: { x: '300px', y: '70px' }
+          },
         ]}
         client:idle
       />
     </div>
   </section>
 
-  <section class="mx-32 my-20 grid grid-cols-3 gap-12" id="nuestros-graduados">
+  <section class="mx-6 md:mx-32 my-32 grid md:grid-cols-3 gap-12" id="nuestros-graduados">
     <div class="col-span-2">
       <h1 class="mb-8 text-4xl font-bold">
         Nuestros <span class="text-r-green">graduados</span>
@@ -98,6 +100,33 @@ const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
           jóvenes preparados, con acceso a educación, empleo y mejores condiciones de vida.
         </span>
       </p>
+
+      <div class="min-h-80 mt-12">
+        <PieChart
+            data={[
+              { key: "Trabaja", value: 60, color: '#53a575' },
+              { key: "Estudia", value: 40, color: '#a29f9f' },
+            ]}
+
+            annotations= {[
+              {
+                content: 'Estudia',
+                x: '20%',
+                y: '80%',
+                textAlign: 'right',
+                subject: { x: '35%', y: '50%' }
+              },
+              {
+                content: 'Trabaja',
+                x: '85%',
+                y: '60%',
+                textAlign: 'right',
+                subject: { x: '65%', y: '55%' }
+              },
+            ]}
+            client:idle
+        />
+      </div>
     </div>
 
     <div class="mx-auto w-3xs space-y-14 *:relative *:mx-auto *:space-x-2 *:text-center">
@@ -124,13 +153,13 @@ const legendItems = Object.entries(genderChart).map(([_, genderChart]) => ({
     </div>
   </section>
 
-  <div class="mx-32">
+  <div class="mx-6 md:mx-32">
     <h1 class="mb-8 text-center text-4xl font-bold">
       Historias de <span class="text-r-green">esperanza</span>
     </h1>
   </div>
 
-  <section class="mx-32 my-20" id="nuestra-historia">
+  <section class="mx-6 md:mx-32 my-20" id="nuestra-historia">
     <h1 class="mb-8 text-center text-4xl font-bold">
       Nuestra <span class="text-r-green">historia</span>
     </h1>

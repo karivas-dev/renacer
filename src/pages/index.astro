@@ -13,48 +13,47 @@ import {
   Handshake,
 } from "@lucide/astro";
 import homepagePasantia from "@assets/home/homepage-pasantia.jpg";
+import homepagePatrocinio from "@assets/home/homepage-patrocinio.jpeg";
+import homepageEmpleo from "@assets/home/homepage-empleo.jpg";
 import banner from "@assets/home/DSC07345.jpg";
+import concierto from "@assets/home/Concierto de rock.png"
+import renacerConecta from "@assets/home/RenacerConecta.png"
 import groupClass from "@assets/home/group-class.jpg";
 import groupEvent from "@assets/home/DSC07175.jpg";
-import grupoRoble from "@assets/home/logos/GrupoRoble.png";
-import hotelRealIntercontinental from "@assets/home/logos/hotelRealIntercontinental.png";
-import quality from "@assets/home/logos/quality.jpg";
-import solaire from "@assets/home/logos/Solaire.jpeg";
-import acsa from "@assets/home/logos/ACSA.png";
-import autofacil from "@assets/home/logos/Autofacil.jpg";
-import gardenTowers from "@assets/home/logos/GardenTowers.png";
-import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
 import SecondaryButton from "../components/SecondaryButton.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 
-const partners = [grupoRoble, hotelRealIntercontinental, quality, solaire, acsa, autofacil, gardenTowers];
+const partners = Object.values(import.meta.glob('../assets/home/logos/*.{jpg,png,webp}', {eager: true})).map((img: any) => img.default);
 
 const bannerItems = [
   {
     img: banner,
+    title: '¿Quiénes <span class="text-r-green">somos?</span>',
     firstText:
       "Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.",
     secondText:
       "Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.",
   },
   {
-    img: banner,
-    firstText:
-      "Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través de nuestro programa Creando Esperanza.",
-    secondText:
-      "Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.",
+    img: renacerConecta,
+    title: 'Renacer <span class="text-r-green">conecta 2026</span>',
+    firstText:"El pasado 30 de abril realizamos nuestro evento intersedes, donde 120 jóvenes de San Salvador y Santa Ana se reunieron en una jornada al aire libre llena de energía, aprendizaje y conexión.",
+  },
+  {
+    img: concierto,
+    firstText: "En agosto 2025, se llevó a cabo el primer concierto de Rock a beneficio de Fundación Renacer. La música y el talento estuvieron a cargo de Prueba de Sonido y Little Bird Bone, dos bandas salvadoreñas que se sumaron a esta oportunidad única para unir a la comunidad en torno a una causa noble y transformadora."
   },
 ];
 ---
 
 <Layout position="fixed">
-  <swiper-container slides-per-view="1" autoplay="true" autoplay-delay="10000" loop="true" css-mode="true">
+  <swiper-container slides-per-view="1" autoplay="true" autoplay-delay="9000" loop="true" css-mode="true" allowSlideNext="true" allowSlidePrev="true">
     {
       bannerItems.map((item) => (
         <swiper-slide class="my-auto">
-          <Banner firstText={item.firstText} secondText={item.secondText} />
+          <Banner img={item.img} firstText={item.firstText} secondText={item.secondText} title={item.title}/>
         </swiper-slide>
       ))
     }
@@ -67,23 +66,21 @@ const bannerItems = [
         <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
           ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
         </h1>
-        <div class="flex flex-col space-y-2">
-          <span>
-            Somos una organización sin fines de lucro en El Salvador que acompaña a jóvenes en situación de
-            vulnerabilidad, especialmente a quienes provienen de casas hogares, brindándoles formación integral a través
-            de nuestro programa Creando Esperanza.
-          </span>
-          <span>
-            Mediante capacitación técnica, desarrollo de habilidades para la vida, acompañamiento psicológico y
-            vinculación con empresas aliadas, impulsamos la inserción laboral y la construcción de proyectos de vida
-            dignos, promoviendo oportunidades reales para desarrollo personal y profesional de nuestros jóvenes.
-          </span>
-        </div>
+        <p class="flex flex-col space-y-2">
+          Desde el 2014, el programa Creando Esperanza acompaña a
+          jóvenes que, al cumplir 18 años, deben abandonar las casas de
+          acogida y enfrentar la vida sin una red de apoyo, cargando con
+          carencias económicas y afectivas. También brinda
+          oportunidades a quienes, entre los 17 y 21 años, viven en
+          circunstancias de vulnerabilidad y anhelan una oportunidad
+          para salir adelante.
+        </p>
 
         <div class="mt-10 flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
-          <a class="border-r-green bg-r-green grow rounded-xl border px-6 py-4 text-center text-white"
+          <a href="/sobre-nosotros#nuestro-impacto" class="border-r-green bg-r-green grow rounded-xl border px-6 py-4 text-center text-white hover:text-r-green hover:bg-transparent"
             >Nuestro impacto</a
           >
+
           <SecondaryButton route="/creando-esperanza" text="Creando Esperanza" />
         </div>
       </div>
@@ -101,7 +98,7 @@ const bannerItems = [
           <h2>Excelencia</h2>
         </div>
 
-        <div class="md:col-start-3">
+        <div>
           <SquaresIntersect class="mx-auto h-12 w-12" />
           <h2>Transparencia</h2>
         </div>
@@ -141,7 +138,7 @@ const bannerItems = [
         <Card
           title="Patrocinio"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          image={homepagePasantia}
+          image={homepagePatrocinio}
           icon={Handshake}
         />
 
@@ -155,7 +152,7 @@ const bannerItems = [
         <Card
           title="Empleo"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          image={homepagePasantia}
+          image={homepageEmpleo}
           icon={BriefcaseBusiness}
         />
       </div>
@@ -183,7 +180,7 @@ const bannerItems = [
       </h1>
 
       <swiper-container
-        class="overflow-visible px-10"
+        class="overflow-visible space-x-2"
         speed="500"
         loop="true"
         css-mode="true"
@@ -207,7 +204,7 @@ const bannerItems = [
         {
           partners.map((partner) => (
             <swiper-slide class="my-auto">
-              <Image src={partner} alt="Logo" layout="fixed" class="h-auto w-40" />
+              <Image src={partner} alt="Logo" layout="fixed" class="h-auto w-40" width="120" />
             </swiper-slide>
           ))
         }
