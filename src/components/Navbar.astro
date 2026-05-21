@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "/creando-esperanza", label: "Creando Esperanza" },
   { href: "/involucrate", label: "Involúcrate" },
-  { href: "/unete", label: "Únete" },
 ];
 ---
 
@@ -27,6 +26,9 @@ const navLinks = [
           </Link>
         ))
       }
+      <Link href='' class="transition-all duration-200 hover:opacity-70 hover:text-white bg-r-green px-8 py-3 rounded-full text-white font-bold">
+        Donar
+      </Link>
     </nav>
 
     <button class="md:hidden" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false" type="button" data-nav-toggle>
@@ -44,11 +46,15 @@ const navLinks = [
           </Link>
         ))
       }
+
+      <Link href='' class="transition-all duration-200 hover:opacity-70 hover:text-white bg-r-green px-8 py-3 rounded-full text-white font-bold text-center">
+        Donar
+      </Link>
     </nav>
   </div>
 </header>
 
-<script type="module">
+<script>
   import gsap from "gsap";
 
   const header = document.querySelector("#nav");

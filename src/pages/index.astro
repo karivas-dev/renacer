@@ -43,6 +43,7 @@ const bannerItems = [
   },
   {
     img: concierto,
+    title: 'Concierto de <span class="text-r-green">Rock 2025</span>',
     firstText: "En agosto 2025, se llevó a cabo el primer concierto de Rock a beneficio de Fundación Renacer. La música y el talento estuvieron a cargo de Prueba de Sonido y Little Bird Bone, dos bandas salvadoreñas que se sumaron a esta oportunidad única para unir a la comunidad en torno a una causa noble y transformadora."
   },
 ];
@@ -59,8 +60,8 @@ const bannerItems = [
     }
   </swiper-container>
 
-  <main class="mx-6 md:mx-20">
-    <section class="my-32 grid gap-12 md:grid-cols-2" id="como-impactamos">
+  <main>
+    <section class="mx-6 md:mx-20 my-32 grid gap-12 md:grid-cols-2" id="como-impactamos">
       <Image src={groupClass} class="order-2 rounded-2xl" alt="Foto grupal" layout="constrained" format="jpeg" />
       <div class="order-1 my-auto">
         <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
@@ -86,7 +87,7 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="my-32 text-center" id="nuestros-valores">
+    <section class="mx-6 md:mx-20 my-32 text-center" id="nuestros-valores">
       <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
         Nuestros <span class="text-r-green">valores</span>
       </h1>
@@ -108,7 +109,7 @@ const bannerItems = [
           <h2>Resilencia</h2>
         </div>
 
-        <div class="md:col-start-2">
+        <div class="md:col-start-2!">
           <HeartHandshake class="mx-auto h-12 w-12" />
           <h2>Solidaridad</h2>
         </div>
@@ -125,7 +126,7 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="my-32" id="transformamos-vidas">
+    <section class="mx-6 md:mx-20 my-32" id="transformamos-vidas">
       <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
         Transformamos <span class="text-r-green">vidas</span>
       </h1>
@@ -137,28 +138,28 @@ const bannerItems = [
       <div class="mt-8 grid auto-rows-min gap-6 md:mt-16 md:gap-8 lg:grid-cols-3">
         <Card
           title="Patrocinio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Gracias al apoyo de nuestras empresas aliadas, los jóvenes reciben formación en empleabilidad, acompañamiento psicológico y talleres de desarrollo personal y profesional."
           image={homepagePatrocinio}
           icon={Handshake}
         />
 
         <Card
           title="Pasantías"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Las empresas aliadas brindan espacios donde los jóvenes fortalecen habilidades técnicas, adquieren experiencia y ganan confianza para su futuro laboral. "
           image={homepagePasantia}
           icon={GraduationCap}
         />
 
         <Card
           title="Empleo"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Los jóvenes de Fundación Renacer acceden a oportunidades laborales y crecimiento profesional junto a nuestras empresas aliadas. "
           image={homepageEmpleo}
           icon={BriefcaseBusiness}
         />
       </div>
     </section>
 
-    <section class="my-32 grid gap-12 md:grid-cols-2" id="conoce-nuestro-impacto">
+    <section class="mx-6 md:mx-20 my-32 grid gap-12 md:grid-cols-2" id="conoce-nuestro-impacto">
       <Image src={groupEvent} class="order-2 rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
       <div class="order-1 my-auto">
         <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
@@ -174,8 +175,8 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="my-32" id="aliados">
-      <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
+    <section class="px-6 md:px-20 py-32 bg-white" id="aliados">
+      <h1 class="mb-6 text-3xl font-bold md:mb-8 md:text-4xl">
         Nuestros <span class="text-r-green">aliados</span>
       </h1>
 
@@ -187,19 +188,19 @@ const bannerItems = [
         autoplay
         navigation="true"
         breakpoints='{
-								"320": {
-									"slidesPerView": 3
-								},
-								"640": {
-									"slidesPerView": 4
-								},
-								"768": {
-									"slidesPerView": 5
-								},
-								"1024": {
-									"slidesPerView": 6
-								}
-							}'
+                        "320": {
+                            "slidesPerView": 3
+                        },
+                        "640": {
+                            "slidesPerView": 4
+                        },
+                        "768": {
+                            "slidesPerView": 5
+                        },
+                        "1024": {
+                            "slidesPerView": 7
+                        }
+					}'
       >
         {
           partners.map((partner) => (
