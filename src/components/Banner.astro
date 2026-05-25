@@ -5,16 +5,25 @@ const { img, firstText, secondText, title } = Astro.props;
 ---
 
 <div class="relative h-screen w-full" id="quienes-somos">
-  <Image src={img} class="h-screen min-w-screen object-cover" alt="Fundación Renacer banner" layout="full-width" sizes="(max-width: 768px) 100vw, 100vw" format="jpeg" />
-  <div class="absolute -bottom-1/4 md:bottom-0 flex flex-col justify-end bg-r-gray-100 from-neutral-950 p-6 rounded-t-2xl">
-    <h1 class="mb-6 text-4xl font-bold" set:html={title}></h1>
+  <Image
+    src={img}
+    class="h-screen min-w-screen object-cover"
+    alt="Fundación Renacer banner"
+    layout="full-width"
+    sizes="(max-width: 768px) 100vw, 100vw"
+    format="jpeg"
+  />
+  <div
+    class="bg-r-gray-100 absolute -bottom-1/4 flex flex-col justify-end rounded-t-2xl from-neutral-950 p-6 md:bottom-0"
+  >
+    <h1 class="mb-6 text-4xl font-bold" set:html={title} />
 
     <p class="flex flex-col text-lg">
       <span>
         {firstText}
       </span>
 
-      <span class="pt-4 hidden md:block">
+      <span class="hidden pt-4 md:block">
         {secondText}
       </span>
     </p>

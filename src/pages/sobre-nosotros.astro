@@ -11,8 +11,8 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <section class="mx-6 md:mx-32 my-20" id="conoce-nuestra-historia">
-    <div class="grid md:grid-cols-2 gap-12">
+  <section class="mx-6 my-20 md:mx-32" id="conoce-nuestra-historia">
+    <div class="grid gap-12 md:grid-cols-2">
       <Image src={DSC01734} class="rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
       <div class="my-auto">
         <h1 class="mb-8 text-4xl font-bold">
@@ -28,7 +28,7 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
 
-  <section class="mx-6 md:mx-32 grid md:grid-cols-3 gap-12" id="nuestro-impacto">
+  <section class="mx-6 grid gap-12 md:mx-32 md:grid-cols-3" id="nuestro-impacto">
     <div class="col-span-2">
       <h1 class="mb-8 text-4xl font-bold">
         Nuestro <span class="text-r-green">impacto</span>
@@ -42,7 +42,7 @@ import Footer from "../components/Footer.astro";
         <div class="flex items-center md:space-x-4">
           <UsersRound class="h-8 w-8 md:h-12 md:w-12" />
           <div class="text-center text-sm">
-            <h1 class="text-3xl md:text-6xl font-bold">+450</h1>
+            <h1 class="text-3xl font-bold md:text-6xl">+450</h1>
             <p>jóvenes beneficiados</p>
           </div>
         </div>
@@ -50,7 +50,7 @@ import Footer from "../components/Footer.astro";
         <div class="flex items-center space-x-4 text-sm">
           <MapPinHouse class="h-8 w-8 md:h-12 md:w-12" />
           <div class="text-center">
-            <h1 class="text-3xl md:text-6xl font-bold">2</h1>
+            <h1 class="text-3xl font-bold md:text-6xl">2</h1>
             <p>sedes</p>
           </div>
           <div>
@@ -65,23 +65,22 @@ import Footer from "../components/Footer.astro";
     <div class="min-h-80">
       <PieChart
         data={[
-          { key: "Hombres", value: 35, color: '#53a575'},
-          { key: "Mujeres", value: 65, color: '#a29f9f' },
+          { key: "Hombres", value: 35, color: "#53a575" },
+          { key: "Mujeres", value: 65, color: "#a29f9f" },
         ]}
-
-        annotations= {[
+        annotations={[
           {
-              content: 'Mujeres',
-              x: 25,
-              y: 10,
-              subject: { x: 100, y: 50 }
+            content: "Mujeres",
+            x: 25,
+            y: 10,
+            subject: { x: 100, y: 50 },
           },
           {
-              content: 'Hombres',
-              x: '350px',
-              y: '20px',
-              textAlign: 'right',
-              subject: { x: '300px', y: '70px' }
+            content: "Hombres",
+            x: "350px",
+            y: "20px",
+            textAlign: "right",
+            subject: { x: "300px", y: "70px" },
           },
         ]}
         client:idle
@@ -89,7 +88,7 @@ import Footer from "../components/Footer.astro";
     </div>
   </section>
 
-  <section class="mx-6 md:mx-32 my-32 grid md:grid-cols-3 gap-12" id="nuestros-graduados">
+  <section class="mx-6 my-32 grid gap-12 md:mx-32 md:grid-cols-3" id="nuestros-graduados">
     <div class="col-span-2">
       <h1 class="mb-8 text-4xl font-bold">
         Nuestros <span class="text-r-green">graduados</span>
@@ -101,30 +100,29 @@ import Footer from "../components/Footer.astro";
         </span>
       </p>
 
-      <div class="min-h-80 mt-12">
+      <div class="mt-12 min-h-80">
         <PieChart
-            data={[
-              { key: "Trabaja", value: 60, color: '#53a575' },
-              { key: "Estudia", value: 40, color: '#a29f9f' },
-            ]}
-
-            annotations= {[
-              {
-                content: 'Estudia',
-                x: '20%',
-                y: '80%',
-                textAlign: 'right',
-                subject: { x: '35%', y: '50%' }
-              },
-              {
-                content: 'Trabaja',
-                x: '85%',
-                y: '60%',
-                textAlign: 'right',
-                subject: { x: '65%', y: '55%' }
-              },
-            ]}
-            client:idle
+          data={[
+            { key: "Trabaja", value: 60, color: "#53a575" },
+            { key: "Estudia", value: 40, color: "#a29f9f" },
+          ]}
+          annotations={[
+            {
+              content: "Estudia",
+              x: "20%",
+              y: "80%",
+              textAlign: "right",
+              subject: { x: "35%", y: "50%" },
+            },
+            {
+              content: "Trabaja",
+              x: "85%",
+              y: "60%",
+              textAlign: "right",
+              subject: { x: "65%", y: "55%" },
+            },
+          ]}
+          client:idle
         />
       </div>
     </div>
@@ -159,7 +157,7 @@ import Footer from "../components/Footer.astro";
     </h1>
   </div>
 
-  <section class="mx-6 md:mx-32 my-20" id="nuestra-historia">
+  <section class="mx-6 my-20 md:mx-32" id="nuestra-historia">
     <h1 class="mb-8 text-center text-4xl font-bold">
       Nuestra <span class="text-r-green">historia</span>
     </h1>

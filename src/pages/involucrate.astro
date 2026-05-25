@@ -2,17 +2,19 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import DSC00026 from "@assets/engage/DSC00026.jpg";
-import donar from "@assets/engage/IMG_1337.jpg"
+import donar from "@assets/engage/IMG_1337.jpg";
 import DSC01793 from "@assets/engage/DSC01793.jpg";
 import DSC00014 from "@assets/engage/DSC00014.jpg";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <div class="md:relative mx-6 md:mx-28 grid h-[calc(100vh-138px)] md:grid-cols-5">
-    <Image src={DSC01793} alt="Foto grupal" class="md:col-span-4 md:col-end-5 my-auto rounded-xl" layout="full-width" />
+  <div class="mx-6 grid h-[calc(100vh-138px)] md:relative md:mx-28 md:grid-cols-5">
+    <Image src={DSC01793} alt="Foto grupal" class="my-auto rounded-xl md:col-span-4 md:col-end-5" layout="full-width" />
 
-    <div class="bg-r-gray-800 md:absolute md:right-0 md:bottom-0 md:w-1/2 md:-translate-y-1/2 space-y-4 rounded-xl p-6 mt-6 md:mt-0">
+    <div
+      class="bg-r-gray-800 mt-6 space-y-4 rounded-xl p-6 md:absolute md:right-0 md:bottom-0 md:mt-0 md:w-1/2 md:-translate-y-1/2"
+    >
       <h1 class="text-3xl font-bold">¿Cómo puedo <span class="text-r-green">ayudar?</span></h1>
       <p>
         En Fundación Renacer creemos que cada aporte cuenta y transforma vidas. Hoy puedes ser parte de nuestra misión,
@@ -22,30 +24,34 @@ import Footer from "../components/Footer.astro";
     </div>
   </div>
 
-  <div class="md:flex my-32 md:max-h-120">
-      <Image src={DSC00026} class="h-120 md:w-100 object-cover" alt="Foto" />
+  <div class="my-32 md:flex md:max-h-120">
+    <Image src={DSC00026} class="h-120 object-cover md:w-100" alt="Foto" />
 
-      <div class="bg-r-green flex flex-col justify-items-center px-8 py-10 text-white w-full">
-        <div class="space-y-6 my-auto">
-          <h1 class="text-3xl font-bold">Sumarme como empresa</h1>
-          <p>Fortaleciendo nuestro impacto social a través de alianzas estratégicas y apoyo institucional.</p>
-        </div>
+    <div class="bg-r-green flex w-full flex-col justify-items-center px-8 py-10 text-white">
+      <div class="my-auto space-y-6">
+        <h1 class="text-3xl font-bold">Sumarme como empresa</h1>
+        <p>Fortaleciendo nuestro impacto social a través de alianzas estratégicas y apoyo institucional.</p>
       </div>
+    </div>
   </div>
 
-  <div class="mx-6 md:mx-28 my-32 space-y-6">
-    <div class="grid md:grid-cols-8 rounded-2xl ">
-      <Image src={DSC00014} class="md:col-span-3 rounded-t-2xl md:rounded-l-2xl md:rounded-t-none" alt="Foto grupal" />
-      <div class="md:col-span-5 bg-r-gray-800 grid place-content-center px-8 py-10 rounded-b-2xl md:rounded-r-2xl md:rounded-l-none">
-        <h1 class="text-3xl font-bold mb-6">Ser voluntario</h1>
+  <div class="mx-6 my-32 space-y-6 md:mx-28">
+    <div class="grid rounded-2xl md:grid-cols-8">
+      <Image src={DSC00014} class="rounded-t-2xl md:col-span-3 md:rounded-t-none md:rounded-l-2xl" alt="Foto grupal" />
+      <div
+        class="bg-r-gray-800 grid place-content-center rounded-b-2xl px-8 py-10 md:col-span-5 md:rounded-l-none md:rounded-r-2xl"
+      >
+        <h1 class="mb-6 text-3xl font-bold">Ser voluntario</h1>
         <p>Aportando tu tiempo, talento y compromiso para acompañar a quienes más lo necesitan.</p>
       </div>
     </div>
 
-    <div class="grid md:grid-cols-8 rounded-2xl text-white">
-      <Image src={donar} class="md:col-span-3 rounded-t-2xl md:rounded-l-2xl md:rounded-t-none" alt="Foto grupal" />
-      <div class="md:col-span-5 bg-r-green grid place-content-center px-8 py-10 rounded-b-2xl md:rounded-r-2xl md:rounded-l-none">
-        <h1 class="text-3xl font-bold mb-6">Donar como persona natural</h1>
+    <div class="grid rounded-2xl text-white md:grid-cols-8">
+      <Image src={donar} class="rounded-t-2xl md:col-span-3 md:rounded-t-none md:rounded-l-2xl" alt="Foto grupal" />
+      <div
+        class="bg-r-green grid place-content-center rounded-b-2xl px-8 py-10 md:col-span-5 md:rounded-l-none md:rounded-r-2xl"
+      >
+        <h1 class="mb-6 text-3xl font-bold">Donar como persona natural</h1>
         <p>Realizando donaciones que contribuyen directamente al desarrollo de nuestros programas.</p>
       </div>
     </div>
