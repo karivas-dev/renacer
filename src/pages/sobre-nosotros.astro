@@ -1,11 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import DSC01734 from "@assets/aboutUs/DSC01734.JPG";
+import DSC01734 from "@assets/aboutUs/DSC01734.jpg";
 import { Image } from "astro:assets";
 import SecondaryButton from "../components/SecondaryButton.astro";
 import { CircleDollarSign, GraduationCap, Headset, Languages, UsersRound, MapPinHouse } from "@lucide/astro";
 import Timeline from "../components/Timeline.astro";
-import { VisDonut } from "@unovis/vue";
 import PieChart from "../components/PieChart.vue";
 import Footer from "../components/Footer.astro";
 ---
@@ -47,13 +46,13 @@ import Footer from "../components/Footer.astro";
           </div>
         </div>
 
-        <div class="flex items-center space-x-4 text-sm">
+        <div class="flex items-center space-x-4">
           <MapPinHouse class="h-8 w-8 md:h-12 md:w-12" />
           <div class="text-center">
             <h1 class="text-3xl font-bold md:text-6xl">2</h1>
             <p>sedes</p>
           </div>
-          <div>
+          <div class="">
             <p>San Salvador</p>
             <p>Santa Ana</p>
           </div>
@@ -70,15 +69,15 @@ import Footer from "../components/Footer.astro";
         ]}
         annotations={[
           {
-            content: "Mujeres",
-            x: 25,
+            content: { text: "Mujeres", fontSize: 20, fontWeight: 600 },
+            x: 0,
             y: 10,
             subject: { x: 100, y: 50 },
           },
           {
-            content: "Hombres",
-            x: "350px",
-            y: "20px",
+            content: { text: "Hombres", fontSize: 20, fontWeight: 600 },
+            x: "375px",
+            y: "0px",
             textAlign: "right",
             subject: { x: "300px", y: "70px" },
           },
@@ -89,7 +88,7 @@ import Footer from "../components/Footer.astro";
   </section>
 
   <section class="mx-6 my-32 grid gap-12 md:mx-32 md:grid-cols-3" id="nuestros-graduados">
-    <div class="col-span-2">
+    <div class="md:col-span-2">
       <h1 class="mb-8 text-4xl font-bold">
         Nuestros <span class="text-r-green">graduados</span>
       </h1>
@@ -108,14 +107,14 @@ import Footer from "../components/Footer.astro";
           ]}
           annotations={[
             {
-              content: "Estudia",
+              content: { text: "Estudia", fontSize: 20, fontWeight: 600 },
               x: "20%",
               y: "80%",
               textAlign: "right",
               subject: { x: "35%", y: "50%" },
             },
             {
-              content: "Trabaja",
+              content: { text: "Trabaja", fontSize: 20, fontWeight: 600 },
               x: "85%",
               y: "60%",
               textAlign: "right",

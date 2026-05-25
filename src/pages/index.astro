@@ -16,18 +16,18 @@ import homepagePasantia from "@assets/home/homepage-pasantia.jpg";
 import homepagePatrocinio from "@assets/home/homepage-patrocinio.jpeg";
 import homepageEmpleo from "@assets/home/homepage-empleo.jpg";
 import banner from "@assets/home/DSC07345.jpg";
-import concierto from "@assets/home/Concierto de rock.png";
-import renacerConecta from "@assets/home/RenacerConecta.png";
+import concierto from "@assets/home/Rock con propósito.png"
+import renacerConecta from "@assets/home/Renacer-Conecta 2026.png"
 import groupClass from "@assets/home/group-class.jpg";
 import groupEvent from "@assets/home/DSC07175.jpg";
+import entreAmigas from "@assets/home/Entre amigas.png"
+import carrera from "@assets/home/Carrera Se Vale Soñar.png"
 import Card from "../components/Card.astro";
 import SecondaryButton from "../components/SecondaryButton.astro";
 import Footer from "../components/Footer.astro";
 import Banner from "../components/Banner.astro";
 
-const partners = Object.values(import.meta.glob("../assets/home/logos/*.{jpg,png,webp}", { eager: true })).map(
-  (img: any) => img.default,
-);
+const partners = Object.values(import.meta.glob('../assets/home/logos/*.{jpg,png,webp}', {eager: true})).map((img: any) => img.default);
 
 const bannerItems = [
   {
@@ -41,55 +41,54 @@ const bannerItems = [
   {
     img: renacerConecta,
     title: 'Renacer <span class="text-r-green">conecta 2026</span>',
-    firstText:
-      "El pasado 30 de abril realizamos nuestro evento intersedes, donde 120 jóvenes de San Salvador y Santa Ana se reunieron en una jornada al aire libre llena de energía, aprendizaje y conexión.",
+    firstText:"El pasado 30 de abril realizamos nuestro evento intersedes, donde 120 jóvenes de San Salvador y Santa Ana se reunieron en una jornada al aire libre llena de energía, aprendizaje y conexión.",
   },
   {
     img: concierto,
     title: 'Concierto de <span class="text-r-green">Rock 2025</span>',
-    firstText:
-      "En agosto 2025, se llevó a cabo el primer concierto de Rock a beneficio de Fundación Renacer. La música y el talento estuvieron a cargo de Prueba de Sonido y Little Bird Bone, dos bandas salvadoreñas que se sumaron a esta oportunidad única para unir a la comunidad en torno a una causa noble y transformadora.",
+    firstText: "En agosto 2025, se llevó a cabo el primer concierto de Rock a beneficio de Fundación Renacer. La música y el talento estuvieron a cargo de Prueba de Sonido y Little Bird Bone, dos bandas salvadoreñas que se sumaron a esta oportunidad única para unir a la comunidad en torno a una causa noble y transformadora.",
+  },
+  {
+    img: carrera,
+    title: 'Carrera <span class="text-r-green">Se Vale Soñar</span>',
+    firstText: "La primera carrera desarrollada para seguir impulsando el futuro de 120 jóvenes, recibió un fuerte respaldo por parte de las personas en general, la comunidad runner y las empresas. Reafirmando el compromiso que se tiene con los jóvenes y la motivación de construir futuros llenos de posibilidades.",
+  },
+  {
+    img: entreAmigas,
+    title: 'Entre amigas'
   },
 ];
 ---
 
 <Layout position="fixed">
-  <swiper-container
-    slides-per-view="1"
-    autoplay="true"
-    autoplay-delay="9000"
-    loop="true"
-    css-mode="true"
-    allowSlideNext="true"
-    allowSlidePrev="true"
-  >
+  <swiper-container slides-per-view="1" autoplay="true" autoplay-delay="9000" loop="true" css-mode="true" allowSlideNext="true" allowSlidePrev="true">
     {
       bannerItems.map((item) => (
         <swiper-slide class="my-auto">
-          <Banner img={item.img} firstText={item.firstText} secondText={item.secondText} title={item.title} />
+          <Banner img={item.img} firstText={item.firstText} secondText={item.secondText} title={item.title}/>
         </swiper-slide>
       ))
     }
   </swiper-container>
-
   <main>
-    <section class="mx-6 my-32 grid gap-12 md:mx-20 md:grid-cols-2" id="como-impactamos">
+    <section class="mx-6 md:mx-20 my-32 grid gap-12 md:grid-cols-2" id="como-impactamos">
       <Image src={groupClass} class="order-2 rounded-2xl" alt="Foto grupal" layout="constrained" format="jpeg" />
       <div class="order-1 my-auto">
         <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
           ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
         </h1>
         <p class="flex flex-col space-y-2">
-          Desde el 2014, el programa Creando Esperanza acompaña a jóvenes que, al cumplir 18 años, deben abandonar las
-          casas de acogida y enfrentar la vida sin una red de apoyo, cargando con carencias económicas y afectivas.
-          También brinda oportunidades a quienes, entre los 17 y 21 años, viven en circunstancias de vulnerabilidad y
-          anhelan una oportunidad para salir adelante.
+          Desde el 2014, el programa Creando Esperanza acompaña a
+          jóvenes que, al cumplir 18 años, deben abandonar las casas de
+          acogida y enfrentar la vida sin una red de apoyo, cargando con
+          carencias económicas y afectivas. También brinda
+          oportunidades a quienes, entre los 17 y 21 años, viven en
+          circunstancias de vulnerabilidad y anhelan una oportunidad
+          para salir adelante.
         </p>
 
         <div class="mt-10 flex flex-col space-y-3 md:flex-row md:space-y-0 md:space-x-4">
-          <a
-            href="/sobre-nosotros#nuestro-impacto"
-            class="border-r-green bg-r-green hover:text-r-green grow rounded-xl border px-6 py-4 text-center text-white hover:bg-transparent"
+          <a href="/sobre-nosotros#nuestro-impacto" class="border-r-green bg-r-green grow rounded-xl border px-6 py-4 text-center text-white hover:text-r-green hover:bg-transparent"
             >Nuestro impacto</a
           >
 
@@ -98,7 +97,7 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="mx-6 my-32 text-center md:mx-20" id="nuestros-valores">
+    <section class="mx-6 md:mx-20 my-32 text-center" id="nuestros-valores">
       <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
         Nuestros <span class="text-r-green">valores</span>
       </h1>
@@ -137,7 +136,7 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="mx-6 my-32 md:mx-20" id="transformamos-vidas">
+    <section class="mx-6 md:mx-20 my-32" id="transformamos-vidas">
       <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
         Transformamos <span class="text-r-green">vidas</span>
       </h1>
@@ -170,7 +169,7 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="mx-6 my-32 grid gap-12 md:mx-20 md:grid-cols-2" id="conoce-nuestro-impacto">
+    <section class="mx-6 md:mx-20 my-32 grid gap-12 md:grid-cols-2" id="conoce-nuestro-impacto">
       <Image src={groupEvent} class="order-2 rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
       <div class="order-1 my-auto">
         <h1 class="mb-4 text-3xl font-bold md:mb-8 md:text-4xl">
@@ -186,13 +185,13 @@ const bannerItems = [
       </div>
     </section>
 
-    <section class="bg-white px-6 py-32 md:px-20" id="aliados">
+    <section class="px-6 md:px-20 py-32 bg-white" id="aliados">
       <h1 class="mb-6 text-3xl font-bold md:mb-8 md:text-4xl">
         Nuestros <span class="text-r-green">aliados</span>
       </h1>
 
       <swiper-container
-        class="space-x-2 overflow-visible"
+        class="overflow-visible space-x-2"
         speed="500"
         loop="true"
         css-mode="true"
