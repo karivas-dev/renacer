@@ -1,10 +1,11 @@
 ---
 import Link from "./Link.astro";
-const { route, text } = Astro.props;
+const { route, text, class: className } = Astro.props;
+import {twMerge} from "tailwind-merge";
 ---
 
 <Link
   href={route}
-  class="border-r-green text-r-green hover:bg-r-green grow rounded-xl border px-6 py-4 text-center hover:text-white"
+  class={twMerge("border-r-green text-r-green hover:bg-r-green grow rounded-xl border px-6 py-4 text-center hover:text-white", className)}
   >{text}</Link
 >
