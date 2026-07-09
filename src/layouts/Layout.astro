@@ -14,7 +14,7 @@ const basePath = clean(import.meta.env.BASE_URL);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={basePath + 'favicon.ico'} />
+    <link rel="icon" href={basePath + "favicon.ico"} />
     <meta name="generator" content={Astro.generator} />
     <title>Fundación Renacer</title>
 
@@ -39,6 +39,5 @@ const basePath = clean(import.meta.env.BASE_URL);
     </div>
     <slot />
   </body>
-  <!-- External Swiper library loaded from CDN. Consider using npm package + integrity hashing for production. -->
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
 </html>

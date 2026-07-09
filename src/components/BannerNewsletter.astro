@@ -1,9 +1,10 @@
 ---
-import SecondaryButton from "./SecondaryButton.astro";
+import Button from "./Button.astro";
 ---
-<div class=" m-4 rounded-lg bg-white justify-between px-8 md:px-16 py-12 shadow-sm flex">
-    <h1 class="text-xl font-bold md:text-4xl">
-        Descubre nuestro boletín trimestral
-    </h1>
-    <SecondaryButton class="max-w-fit bg-r-green text-white hover:bg-white hover:text-r-green my-auto text-sm md:text-base" text="Conoce más" route="/newsletter" />
+
+<div
+  class="m-4 flex flex-col justify-between space-y-4 rounded-lg bg-white px-8 py-12 shadow-sm md:flex-row md:space-y-0 md:space-x-8 md:px-16"
+>
+  <h1 class="text-center text-xl font-bold md:text-left md:text-4xl">Descubre nuestro boletín trimestral</h1>
+  <Button class="my-auto text-sm md:max-w-1/5 md:text-base" text="Conoce más" route="/newsletter" />
 </div>

@@ -2,17 +2,17 @@
 import Link from "./Link.astro";
 import Logo from "@assets/home/Logo-Renacer-SF.png";
 import { Image } from "astro:assets";
-import SecondaryButton from "./SecondaryButton.astro";
+import Button from "./Button.astro";
 import Instagram from "./icons/Instagram.astro";
 import Facebook from "./icons/Facebook.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import BannerNewsletter from "./BannerNewsletter.astro";
 ---
 
-<BannerNewsletter/>
+<BannerNewsletter />
 
-<div class="text-r-gray-900 m-4 rounded-lg bg-white px-8 md:px-16 py-12 shadow-2xl">
-  <footer class="footer mb-10 flex w-full justify-between text-sm">
+<div class="text-r-gray-900 m-4 rounded-lg bg-white px-8 py-12 shadow-2xl md:px-16">
+  <footer class="footer mb-12 flex w-full justify-between space-x-4 text-sm">
     <div class="hidden md:flex md:justify-between md:space-x-8 md:*:flex md:*:flex-col">
       <div>
         <Link href="/#quienes-somos">Inicio</Link>
@@ -37,36 +37,41 @@ import BannerNewsletter from "./BannerNewsletter.astro";
     </div>
 
     <div>
-      <div class="mb-10">
-        <h1 class="mb-1 text-3xl font-bold text-black">Contáctanos</h1>
-        <p>contacto@fundacionrenacer.com.sv</p>
-        <p>2287-8714</p>
-        <div class="mt-4 flex">
-          <a
-            class=""
-            href="https://www.linkedin.com/company/fundaci%C3%B3n-renacer-el-salvador/?originalSubdomain=sv"
-            target="_blank"
-            aria-label="Visit Fundación Renacer on LinkedIn"
-          >
-            <LinkedIn class="size-14" />
-          </a>
-          <a href="https://www.facebook.com/renacer/" target="_blank" aria-label="Visit Fundación Renacer on Facebook">
-            <Facebook class="size-10" />
-          </a>
-          <a class="ml-4" href="https://www.instagram.com/Renacer/" target="_blank" aria-label="Visit Fundación Renacer on Instagram">
-            <Instagram class="size-10" />
-          </a>
-        </div>
+      <h1 class="mb-1 text-3xl font-bold text-black">Contáctanos</h1>
+      <p class="text-xs md:text-base">contacto@fundacionrenacer.com.sv</p>
+      <p>2287-8714</p>
+      <div class="mt-4 flex">
+        <a
+          class=""
+          href="https://www.linkedin.com/company/fundaci%C3%B3n-renacer-el-salvador/?originalSubdomain=sv"
+          target="_blank"
+          aria-label="Visit Fundación Renacer on LinkedIn"
+        >
+          <LinkedIn class="size-14" />
+        </a>
+        <a href="https://www.facebook.com/renacer/" target="_blank" aria-label="Visit Fundación Renacer on Facebook">
+          <Facebook class="size-10" />
+        </a>
+        <a
+          class="ml-4"
+          href="https://www.instagram.com/Renacer/"
+          target="_blank"
+          aria-label="Visit Fundación Renacer on Instagram"
+        >
+          <Instagram class="size-10" />
+        </a>
       </div>
 
-      <SecondaryButton route="/involucrate" text="Únete a Creando Esperanza" />
+      <Button route="/involucrate" text="Únete a Creando Esperanza" class="mt-4" primary={false} />
     </div>
   </footer>
+
   <Image src={Logo} alt="Logo Fundación Renacer" width="125" layout="fixed" />
   <hr class="bg-r-gray-900 my-6 h-px border-0" />
-  <div class="md:flex items-center justify-between text-xs">
+  <div class="items-center justify-between text-xs md:flex">
     <span
-      >Desarrollado por <a href="https://github.com/karivas-dev" target="_blank" class="hover:font-bold">Karen Rivas</a></span
+      >Desarrollado por <a href="https://github.com/karivas-dev" target="_blank" class="hover:font-bold">Karen Rivas</a
+      ></span
     >
     <span>© 2026 Fundación Renacer</span>
   </div>
