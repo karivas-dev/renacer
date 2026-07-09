@@ -18,112 +18,107 @@ import DSC01806 from "@assets/hope/DSC01806.jpg";
 import DSC09980 from "@assets/hope/DSC09980.jpg";
 import CardNoImg from "../components/CardNoImg.astro";
 import StepItem from "../components/StepItem.astro";
-import SecondaryButton from "../components/SecondaryButton.astro";
 import Footer from "../components/Footer.astro";
 
 const stepsBlock1 = [
   { text: "Visita a casas hogares", icon: House },
-  {
-    text: "Evaluación de candidatos por parte de casas hogares",
-    icon: FileUser,
-  },
+  { text: "Evaluación de candidatos por parte de casas hogares", icon: FileUser },
   { text: "Alianzas empresariales", icon: HandshakeIcon },
   { text: "Entrevistas psicológicas a candidatos", icon: Speech },
 ];
 
 const stepsBlock2 = [
   { text: "Referencia a empresas", icon: FileSearchCorner },
-  {
-    text: "Segundas entrevistas RRHH de empresas con candidatos",
-    icon: Speech,
-  },
+  { text: "Segundas entrevistas RRHH de empresas con candidatos", icon: Speech },
   { text: "Notificación de ingreso", icon: BellDot },
   { text: "Notificación de ingreso", icon: Route },
 ];
 ---
 
 <Layout>
-  <section class="mx-6 mt-10 grid md:mx-20 md:mt-16 md:grid-cols-9 md:gap-x-8" id="creando-esperanza">
-    <div class="col-span-3 my-auto">
-      <h1 class="mb-8 text-4xl font-bold">
-        ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
-      </h1>
-      <p>
-        Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más oportunidades y esperanza.
-      </p>
-    </div>
+  <div class="mx-6 max-w-7xl md:mx-12 lg:mx-20 xl:mx-auto">
+    <section class="mt-10 md:mt-16 md:grid md:grid-cols-9 md:gap-x-8" id="creando-esperanza">
+      <div class="my-auto md:col-span-3">
+        <h1 class="mb-8 text-4xl font-bold">
+          ¿Cómo cambiamos <span class="text-r-green">vidas?</span>
+        </h1>
+        <p>
+          Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más oportunidades y esperanza.
+        </p>
+      </div>
 
-    <div class="col-span-4 flex items-center md:col-span-3">
-      <Image src={DSC05038} class="h-4/5 rounded-2xl object-cover" alt="icon" />
-    </div>
+      <div class="mt-2 flex h-100 items-center md:col-span-3 md:mt-0">
+        <Image src={DSC05038} class="h-4/5 rounded-2xl object-cover" alt="icon" />
+      </div>
 
-    <div class="col-span-3 my-auto hidden space-y-6 md:block">
-      <Image src={DSC09980} class="rounded-2xl" alt="icon" />
-      <Image src={DSC01806} class="rounded-2xl" alt="icon" />
-    </div>
-  </section>
+      <div class="col-span-3 my-auto hidden space-y-6 md:block">
+        <Image src={DSC09980} class="rounded-2xl" alt="icon" />
+        <Image src={DSC01806} class="rounded-2xl" alt="icon" />
+      </div>
+    </section>
 
-  <section class="mx-6 my-32 md:mx-20" id="nuestros-pilares">
-    <h1 class="mb-6 text-center text-4xl font-bold md:mb-12">
-      Nuestros tres <span class="text-r-green">pilares</span>
-    </h1>
-
-    <p class="text-center md:mx-24">
-      Nuestro trabajo se sostiene en tres pilares fundamentales que guían cada acción, fortalecen nuestros programas y
-      hacen posible transformar vidas de manera integral y sostenible.
-    </p>
-
-    <div class="mt-16 grid gap-4 md:grid-cols-3">
-      <CardNoImg
-        icon={Wrench}
-        title="PREPARACIÓN TÉCNICA"
-        description="Capacitamos a nuestros jóvenes con clases de computación, cursos de asistencia
-                    administrativa y atención al cliente; asimismo, brindamos talleres de finanzas personales,
-                    liderazgo y habilidades blandas."
-      />
-
-      <CardNoImg
-        icon={Brain}
-        title="ATENCIÓN PSICOLÓGICA"
-        description="Cuidamos la salud mental de nuestros jóvenes con un continuo e individual seguimiento
-                        psicológico con terapias EMDR incluidas para casos específicos."
-      />
-
-      <CardNoImg
-        icon={BriefcaseBusiness}
-        title="EMPLEABILIDAD"
-        description="Colocamos en prácticas laborales a nuestros jóvenes, mediante nuestras empresas aliadas, para
-                        que puedan adquirir experiencia laboral. Al finalizar el programa, les garantizamos un empleo."
-      />
-    </div>
-  </section>
-
-  <section class="mx-6 grid md:mx-20 md:grid-cols-7 md:gap-x-16" id="como-funcionamos">
-    <div class="my-auto md:col-span-3">
-      <h1 class="mb-6 text-4xl font-bold md:mb-12">
-        ¿Cómo <span class="text-r-green">funcionamos?</span>
+    <section class="my-32" id="nuestros-pilares">
+      <h1 class="mb-6 text-center text-4xl font-bold md:mb-12">
+        Nuestros tres <span class="text-r-green">pilares</span>
       </h1>
 
-      <p class="mb-8 md:mb-0">
-        Nuestro programa sigue un proceso estructurado que garantiza una selección responsable y un acompañamiento
-        integral a cada joven. A través de alianzas, evaluaciones y seguimiento, construimos oportunidades reales para
-        su desarrollo personal, académico y laboral.
+      <p class="text-center md:mx-24">
+        Nuestro trabajo se sostiene en tres pilares fundamentales que guían cada acción, fortalecen nuestros programas y
+        hacen posible transformar vidas de manera integral y sostenible.
       </p>
-    </div>
 
-    <div class="col-span-2 space-y-8 *:space-y-3">
-      {stepsBlock1.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 1} />)}
-    </div>
+      <div class="mt-16 grid gap-4 md:grid-cols-3">
+        <CardNoImg
+          icon={Wrench}
+          title="PREPARACIÓN TÉCNICA"
+          description="Capacitamos a nuestros jóvenes con clases de computación, cursos de asistencia
+                      administrativa y atención al cliente; asimismo, brindamos talleres de finanzas personales,
+                      liderazgo y habilidades blandas."
+        />
 
-    <div class="col-span-2 mt-8 space-y-8 *:space-y-3 md:mt-8">
-      {stepsBlock2.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 5} />)}
-    </div>
-  </section>
+        <CardNoImg
+          icon={Brain}
+          title="ATENCIÓN PSICOLÓGICA"
+          description="Cuidamos la salud mental de nuestros jóvenes con un continuo e individual seguimiento
+                          psicológico con terapias EMDR incluidas para casos específicos."
+        />
+
+        <CardNoImg
+          icon={BriefcaseBusiness}
+          title="EMPLEABILIDAD"
+          description="Colocamos en prácticas laborales a nuestros jóvenes, mediante nuestras empresas aliadas, para
+                          que puedan adquirir experiencia laboral. Al finalizar el programa, les garantizamos un empleo."
+        />
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-7 md:gap-x-16" id="como-funcionamos">
+      <div class="my-auto md:col-span-3">
+        <h1 class="mb-6 text-4xl font-bold md:mb-12">
+          ¿Cómo <span class="text-r-green">funcionamos?</span>
+        </h1>
+
+        <p class="mb-8 md:mb-0">
+          Nuestro programa sigue un proceso estructurado que garantiza una selección responsable y un acompañamiento
+          integral a cada joven. A través de alianzas, evaluaciones y seguimiento, construimos oportunidades reales para
+          su desarrollo personal, académico y laboral.
+        </p>
+      </div>
+
+      <div class="col-span-2 space-y-8 *:space-y-3">
+        {stepsBlock1.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 1} />)}
+      </div>
+
+      <div class="col-span-2 mt-8 space-y-8 *:space-y-3 md:mt-8">
+        {stepsBlock2.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 5} />)}
+      </div>
+    </section>
+  </div>
 
   <div class="bg-r-green my-32 px-8 py-32 text-center text-white md:px-24">
     <h1 class="mb-12 text-4xl font-bold">¡Juntos creamos esperanza!</h1>
 
-    <p class="mb-12 md:mx-24">
+    <p class="mx-auto mb-12 max-w-7xl">
       Nuestra misión es transformar la vida de niños y jóvenes abandonados viviendo en lugares de acogida públicos y
       privados, entrenándolos en múltiples disciplinas, proveyéndoles de apoyo psicológico y emocional, además de
       garantizarles un empleo.

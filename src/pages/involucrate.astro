@@ -6,14 +6,17 @@ import donar from "@assets/engage/IMG_1337.jpg";
 import DSC01793 from "@assets/engage/DSC01793.jpg";
 import DSC00014 from "@assets/engage/DSC00014.jpg";
 import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout>
-  <div class="mx-6 grid h-[calc(100vh-138px)] md:relative md:mx-28 md:grid-cols-5">
+  <div
+    class="mx-6 grid h-[calc(100vh-138px)] max-h-200 max-w-7xl md:relative md:mx-12 md:grid-cols-5 lg:mx-20 xl:mx-auto"
+  >
     <Image src={DSC01793} alt="Foto grupal" class="my-auto rounded-xl md:col-span-4 md:col-end-5" layout="full-width" />
 
     <div
-      class="bg-r-gray-800 mt-6 space-y-4 rounded-xl p-6 md:absolute md:right-0 md:bottom-0 md:mt-0 md:w-1/2 md:-translate-y-1/2"
+      class="bg-r-gray-800 mt-6 max-h-fit space-y-4 rounded-xl p-6 md:absolute md:right-0 md:bottom-0 md:mt-0 md:w-2/3 md:-translate-y-1"
     >
       <h1 class="text-3xl font-bold">¿Cómo puedo <span class="text-r-green">ayudar?</span></h1>
       <p>
@@ -24,7 +27,7 @@ import Footer from "../components/Footer.astro";
     </div>
   </div>
 
-  <div class="my-32 md:flex md:max-h-120">
+  <!--<div class="my-32 md:flex md:max-h-120">
     <Image src={DSC00026} class="h-120 object-cover md:w-100" alt="Foto" />
 
     <div class="bg-r-green flex w-full flex-col justify-items-center px-8 py-10 text-white">
@@ -33,26 +36,41 @@ import Footer from "../components/Footer.astro";
         <p>Fortaleciendo nuestro impacto social a través de alianzas estratégicas y apoyo institucional.</p>
       </div>
     </div>
-  </div>
+  </div>-->
 
-  <div class="mx-6 my-32 space-y-6 md:mx-28">
-    <div class="grid rounded-2xl md:grid-cols-8">
-      <Image src={DSC00014} class="rounded-t-2xl md:col-span-3 md:rounded-t-none md:rounded-l-2xl" alt="Foto grupal" />
+  <div class="mx-6 mt-10 mb-20 max-w-7xl space-y-6 md:mx-12 md:my-32 lg:mx-20 xl:mx-auto">
+    <div class="grid rounded-2xl text-white md:grid-cols-8">
+      <Image
+        src={donar}
+        class="min-h-full rounded-t-2xl object-cover md:col-span-3 md:rounded-t-none md:rounded-l-2xl"
+        alt="Foto beneficiaria"
+      />
       <div
-        class="bg-r-gray-800 grid place-content-center rounded-b-2xl px-8 py-10 md:col-span-5 md:rounded-l-none md:rounded-r-2xl"
+        class="bg-r-green grid content-center rounded-b-2xl px-4 py-6 md:col-span-5 md:rounded-l-none md:rounded-r-2xl md:px-8 md:py-10"
       >
-        <h1 class="mb-6 text-3xl font-bold">Ser voluntario</h1>
-        <p>Aportando tu tiempo, talento y compromiso para acompañar a quienes más lo necesitan.</p>
+        <h1 class="mb-4 text-3xl font-bold">Sumarme como empresa</h1>
+        <p>Fortaleciendo nuestro impacto social a través de alianzas estratégicas y apoyo institucional.</p>
+        <Button
+          route="/formulario-aliados"
+          class="bg-r-gray-100 mt-3 hover:border-white md:w-2/3"
+          text="Más información"
+          primary={false}
+        />
       </div>
     </div>
 
-    <div class="grid rounded-2xl text-white md:grid-cols-8">
-      <Image src={donar} class="rounded-t-2xl md:col-span-3 md:rounded-t-none md:rounded-l-2xl" alt="Foto grupal" />
+    <div class="grid rounded-2xl md:grid-cols-8">
+      <Image
+        src={DSC00014}
+        class="min-h-full rounded-t-2xl object-cover md:col-span-3 md:rounded-t-none md:rounded-l-2xl"
+        alt="Foto grupal"
+      />
       <div
-        class="bg-r-green grid place-content-center rounded-b-2xl px-8 py-10 md:col-span-5 md:rounded-l-none md:rounded-r-2xl"
+        class="bg-r-gray-800 grid place-content-center rounded-b-2xl px-4 py-6 md:col-span-5 md:rounded-l-none md:rounded-r-2xl md:px-8 md:py-10"
       >
-        <h1 class="mb-6 text-3xl font-bold">Donar como persona natural</h1>
-        <p>Realizando donaciones que contribuyen directamente al desarrollo de nuestros programas.</p>
+        <h1 class="mb-6 text-3xl font-bold">Ser voluntario</h1>
+        <p>Aportando tu tiempo, talento y compromiso para acompañar a quienes más lo necesitan.</p>
+        <Button route="/formulario-voluntarios" class="mt-3 md:w-2/3" text="Más información" />
       </div>
     </div>
   </div>

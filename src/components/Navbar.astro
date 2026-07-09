@@ -8,17 +8,16 @@ const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/sobre-nosotros", label: "Sobre nosotros" },
   { href: "/creando-esperanza", label: "Creando Esperanza" },
-  { href: "/involucrate", label: "Involúcrate" },
 ];
 ---
 
 <header id="nav" class="max-w-full rounded-lg bg-white px-6 py-4 shadow-xl" data-state="closed">
   <div class="flex items-center justify-between">
-    <Link href="/" class="shrink-0">
+    <Link href="/" class="shrink-0 pr-10">
       <Image alt="Fundación Renacer logo" src={Logo} width="125" layout="fixed" />
     </Link>
 
-    <nav class="hidden items-center space-x-6 md:flex">
+    <nav class="hidden items-center space-x-3 md:flex lg:space-x-6">
       {
         navLinks.map((link) => (
           <Link href={link.href} class="transition-all duration-200 hover:opacity-70">
@@ -27,10 +26,10 @@ const navLinks = [
         ))
       }
       <Link
-        href=""
+        href="/involucrate"
         class="bg-r-green rounded-full px-8 py-3 font-bold text-white transition-all duration-200 hover:text-white hover:opacity-70"
       >
-        Donar
+        Involúcrate
       </Link>
     </nav>
 
@@ -58,10 +57,10 @@ const navLinks = [
       }
 
       <Link
-        href=""
+        href="/involucrate"
         class="bg-r-green rounded-full px-8 py-3 text-center font-bold text-white transition-all duration-200 hover:text-white hover:opacity-70"
       >
-        Donar
+        Involúcrate
       </Link>
     </nav>
   </div>

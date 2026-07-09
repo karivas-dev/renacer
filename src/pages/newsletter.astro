@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 const pdfs = Object.values(import.meta.glob('../../public/newsletter/*.pdf', {eager: true})).map((pdf: any) => pdf.default.replace('/public', ''));
 ---
 
@@ -14,7 +15,9 @@ const pdfs = Object.values(import.meta.glob('../../public/newsletter/*.pdf', {ea
                 />
             </div>
 
-            <hr class="bg-r-gray-900 my-12 h-px border-0 mx-12" />
+            <hr class="bg-r-gray-900 my-12 h-px border-0 mx-12">
         ))}
     </div>
+
+    <Footer />
 </Layout>
