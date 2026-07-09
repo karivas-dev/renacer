@@ -2,166 +2,136 @@
 import Layout from "../layouts/Layout.astro";
 import DSC01734 from "@assets/aboutUs/DSC01734.jpg";
 import { Image } from "astro:assets";
-import SecondaryButton from "../components/SecondaryButton.astro";
+import Button from "../components/Button.astro";
 import { CircleDollarSign, GraduationCap, Headset, Languages, UsersRound, MapPinHouse } from "@lucide/astro";
 import Timeline from "../components/Timeline.astro";
-import PieChart from "../components/PieChart.vue";
 import Footer from "../components/Footer.astro";
+import ChartEmpleabilidad from "@assets/aboutUs/ChartEmpleabilidad.svg";
+import ChartGenero from "@assets/aboutUs/ChartGender.svg";
 ---
 
 <Layout>
-  <section class="mx-6 my-20 md:mx-32" id="conoce-nuestra-historia">
-    <div class="grid gap-12 md:grid-cols-2">
-      <Image src={DSC01734} class="rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
-      <div class="my-auto">
+  <div class="mx-6 max-w-7xl md:mx-12 lg:mx-20 xl:mx-auto">
+    <section class="my-20 md:my-32" id="conoce-nuestra-historia">
+      <div class="grid gap-12 md:grid-cols-2">
+        <Image src={DSC01734} class="rounded-2xl" alt="Fotografía grupal" layout="constrained" format="jpeg" />
+        <div class="my-auto">
+          <h1 class="mb-8 text-4xl font-bold">
+            Conoce nuestra <span class="text-r-green">historia </span>
+            a lo largo de los años
+          </h1>
+          <p class="mb-10">
+            Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más oportunidades y esperanza.
+          </p>
+
+          <Button route="/sobre-nosotros#nuestra-historia" text="Conoce nuestra historia" />
+        </div>
+      </div>
+    </section>
+
+    <section class="my-20 grid md:my-32 lg:grid-cols-10 lg:space-x-12" id="nuestro-impacto">
+      <div class="lg:col-span-6">
         <h1 class="mb-8 text-4xl font-bold">
-          Conoce nuestra <span class="text-r-green">historia</span>
-          a lo largo de los años
+          Nuestro <span class="text-r-green">impacto</span>
         </h1>
-        <p class="mb-10">
-          Impulsamos a jóvenes en situación de vulnerabilidad a construir un futuro con más oportunidades y esperanza.
+        <p>
+          Acompañamos a jóvenes en situación de vulnerabilidad para que desarrollen sus capacidades y construyan un
+          futuro con más oportunidades.
         </p>
 
-        <SecondaryButton route="/sobre-nosotros#nuestra-historia" text="Conoce nuestra historia" />
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-6 grid gap-12 md:mx-32 md:grid-cols-3" id="nuestro-impacto">
-    <div class="col-span-2">
-      <h1 class="mb-8 text-4xl font-bold">
-        Nuestro <span class="text-r-green">impacto</span>
-      </h1>
-      <p>
-        Acompañamos a jóvenes en situación de vulnerabilidad para que desarrollen sus capacidades y construyan un futuro
-        con más oportunidades.
-      </p>
-
-      <div class="mt-6 flex md:space-x-16">
-        <div class="flex items-center md:space-x-4">
-          <UsersRound class="h-8 w-8 md:h-12 md:w-12" />
-          <div class="text-center text-sm">
-            <h1 class="text-3xl font-bold md:text-6xl">+450</h1>
-            <p>jóvenes beneficiados</p>
+        <div class="mt-8 flex justify-center space-x-2 sm:space-x-8 md:space-x-16 lg:justify-start">
+          <div class="flex items-center md:space-x-2">
+            <UsersRound class="h-8 w-8 md:h-12 md:w-12" />
+            <div class="text-center text-sm">
+              <h1 class="text-3xl font-bold md:text-6xl">+450</h1>
+              <p>jóvenes beneficiados</p>
+            </div>
           </div>
-        </div>
 
-        <div class="flex items-center space-x-4">
-          <MapPinHouse class="h-8 w-8 md:h-12 md:w-12" />
-          <div class="text-center">
-            <h1 class="text-3xl font-bold md:text-6xl">2</h1>
-            <p>sedes</p>
-          </div>
-          <div class="">
-            <p>San Salvador</p>
-            <p>Santa Ana</p>
+          <div class="flex items-center space-x-2">
+            <MapPinHouse class="h-8 w-8 md:h-12 md:w-12" />
+            <div class="text-center">
+              <h1 class="text-3xl font-bold md:text-6xl">2</h1>
+              <p>sedes</p>
+            </div>
+            <div class="">
+              <p>San Salvador</p>
+              <p>Santa Ana</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Min height set for fixing anchor scrolls problem -->
-    <div class="min-h-80">
-      <PieChart
-        data={[
-          { key: "Hombres", value: 35, color: "#53a575" },
-          { key: "Mujeres", value: 65, color: "#a29f9f" },
-        ]}
-        annotations={[
-          {
-            content: { text: "Mujeres", fontSize: 20, fontWeight: 600 },
-            x: 0,
-            y: 10,
-            subject: { x: 100, y: 50 },
-          },
-          {
-            content: { text: "Hombres", fontSize: 20, fontWeight: 600 },
-            x: "375px",
-            y: "0px",
-            textAlign: "right",
-            subject: { x: "300px", y: "70px" },
-          },
-        ]}
-        client:idle
-      />
-    </div>
-  </section>
+      <div class="m-auto mt-10 max-w-5/6 md:max-w-4/6 lg:col-span-4 lg:my-auto lg:max-w-full">
+        <Image src={ChartGenero} class="w-full rounded-2xl" alt="Gráfico de género" layout="constrained" format="svg" />
+      </div>
+    </section>
 
-  <section class="mx-6 my-32 grid gap-12 md:mx-32 md:grid-cols-3" id="nuestros-graduados">
-    <div class="md:col-span-2">
-      <h1 class="mb-8 text-4xl font-bold">
-        Nuestros <span class="text-r-green">graduados</span>
+    <section class="mb-12 gap-12 md:my-32 lg:grid lg:grid-cols-3" id="nuestros-graduados">
+      <div class="md:col-span-2">
+        <h1 class="mb-8 text-4xl font-bold">
+          Nuestros <span class="text-r-green">graduados</span>
+        </h1>
+        <p>
+          Nuestros graduados reflejan el resultado de nuestro trabajo:&nbsp;
+          <span class="font-bold">
+            jóvenes preparados, con acceso a educación, empleo y mejores condiciones de vida.
+          </span>
+        </p>
+
+        <div class="mx-auto mt-12 max-w-5/6 md:max-w-4/6">
+          <Image
+            src={ChartEmpleabilidad}
+            class="h-full w-full rounded-2xl object-cover"
+            alt="Gráfico de empleabilidad"
+            layout="constrained"
+          />
+        </div>
+      </div>
+
+      <div
+        class="mx-auto mt-20 grid grid-cols-4 space-y-10 *:relative *:col-span-2 *:mx-auto *:space-x-2 *:text-center lg:mt-0 lg:flex lg:w-3xs lg:flex-col lg:space-y-14"
+      >
+        <div>
+          <CircleDollarSign
+            class="text-r-green/35 absolute -top-6 right-6 h-16 w-16 md:-top-8 md:right-2 md:h-20 md:w-20"
+          />
+          <p class="text-4xl font-bold md:text-6xl">83%</p>
+          <p>Tiene ingresos arriba de $400</p>
+        </div>
+        <div>
+          <GraduationCap
+            class="text-r-green/35 absolute -top-6 right-6 h-16 w-16 md:-top-8 md:right-2 md:h-20 md:w-20"
+          />
+          <p class="text-4xl font-bold md:text-6xl">81%</p>
+          <p>Ha estudiado alguna licenciatura o ingeniería</p>
+        </div>
+        <div>
+          <Headset class="text-r-green/35 absolute -top-6 right-6 h-16 w-16 md:-top-8 md:right-2 md:h-20 md:w-20" />
+          <p class="text-4xl font-bold md:text-6xl">62%</p>
+          <p>Trabaja en atención al cliente o administración</p>
+        </div>
+        <div>
+          <Languages class="text-r-green/35 absolute -top-6 right-6 h-16 w-16 md:-top-8 md:right-2 md:h-20 md:w-20" />
+          <p class="text-4xl font-bold md:text-6xl">33%</p>
+          <p>Habla 2 o 3 idiomas</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="">
+      <h1 class="mb-8 text-center text-4xl font-bold">
+        Historias de <span class="text-r-green">esperanza</span>
       </h1>
-      <p>
-        Nuestros graduados reflejan el resultado de nuestro trabajo:
-        <span class="font-bold">
-          jóvenes preparados, con acceso a educación, empleo y mejores condiciones de vida.
-        </span>
-      </p>
-
-      <div class="mt-12 min-h-80">
-        <PieChart
-          data={[
-            { key: "Trabaja", value: 60, color: "#53a575" },
-            { key: "Estudia", value: 40, color: "#a29f9f" },
-          ]}
-          annotations={[
-            {
-              content: { text: "Estudia", fontSize: 20, fontWeight: 600 },
-              x: "20%",
-              y: "80%",
-              textAlign: "right",
-              subject: { x: "35%", y: "50%" },
-            },
-            {
-              content: { text: "Trabaja", fontSize: 20, fontWeight: 600 },
-              x: "85%",
-              y: "60%",
-              textAlign: "right",
-              subject: { x: "65%", y: "55%" },
-            },
-          ]}
-          client:idle
-        />
-      </div>
     </div>
 
-    <div class="mx-auto w-3xs space-y-14 *:relative *:mx-auto *:space-x-2 *:text-center">
-      <div>
-        <CircleDollarSign class="text-r-green/35 absolute -top-8 right-2 h-20 w-20" />
-        <p class="text-6xl font-bold">83%</p>
-        <p>Tiene ingresos arriba de $400</p>
-      </div>
-      <div>
-        <GraduationCap class="text-r-green/35 absolute -top-8 right-2 h-20 w-20" />
-        <p class="text-6xl font-bold">81%</p>
-        <p>Ha estudiado alguna licenciatura o ingeniería</p>
-      </div>
-      <div>
-        <Headset class="text-r-green/35 absolute -top-8 right-2 h-20 w-20" />
-        <p class="text-6xl font-bold">62%</p>
-        <p>Trabaja en atención al cliente o administración</p>
-      </div>
-      <div>
-        <Languages class="text-r-green/35 absolute -top-8 right-2 h-20 w-20" />
-        <p class="text-6xl font-bold">33%</p>
-        <p>Habla 2 o 3 idiomas</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="mx-6 md:mx-32">
-    <h1 class="mb-8 text-center text-4xl font-bold">
-      Historias de <span class="text-r-green">esperanza</span>
-    </h1>
+    <section class="my-20" id="nuestra-historia">
+      <h1 class="text-center text-4xl font-bold">
+        Nuestra <span class="text-r-green">historia</span>
+      </h1>
+      <Timeline />
+    </section>
   </div>
-
-  <section class="mx-6 my-20 md:mx-32" id="nuestra-historia">
-    <h1 class="mb-8 text-center text-4xl font-bold">
-      Nuestra <span class="text-r-green">historia</span>
-    </h1>
-    <Timeline />
-  </section>
 
   <Footer />
 </Layout>
