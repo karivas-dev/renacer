@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 const { img, firstText, secondText, title } = Astro.props;
 ---
 
-<div class="relative h-screen w-full" id="quienes-somos">
+<div class="relative h-screen w-full overflow-hidden pb-50 md:pb-0" id="quienes-somos">
   <Image
     src={img}
     class="h-screen min-w-screen object-cover"
@@ -15,7 +15,7 @@ const { img, firstText, secondText, title } = Astro.props;
     format="jpeg"
   />
   <div
-    class="absolute -bottom-1/4 mx-2 flex flex-col justify-end rounded-t-2xl bg-black/35 p-6 text-white backdrop-blur-sm backdrop-saturate-100 md:bottom-0"
+    class="absolute mx-2 flex flex-col justify-end rounded-t-2xl bg-black/35 p-6 text-white backdrop-blur-sm backdrop-saturate-100 bottom-0"
   >
     <h1 class="mb-4 text-4xl font-bold text-shadow-lg" set:html={title} />
 
