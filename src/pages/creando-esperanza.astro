@@ -19,6 +19,7 @@ import DSC09980 from "@assets/hope/DSC09980.jpg";
 import CardNoImg from "../components/CardNoImg.astro";
 import StepItem from "../components/StepItem.astro";
 import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
 
 const stepsBlock1 = [
   { text: "Visita a casas hogares", icon: House },
@@ -109,7 +110,7 @@ const stepsBlock2 = [
         {stepsBlock1.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 1} />)}
       </div>
 
-      <div class="col-span-2 mt-8 space-y-8 *:space-y-3 md:mt-8">
+      <div class="col-span-2 mt-8 space-y-8 *:space-y-3 md:mt-0">
         {stepsBlock2.map((step, index) => <StepItem text={step.text} icon={step.icon} id={index + 5} />)}
       </div>
     </section>
@@ -124,12 +125,8 @@ const stepsBlock2 = [
       garantizarles un empleo.
     </p>
 
-    <a
-      href="/involucrate"
-      class="hover:bg-r-green text-r-green grow rounded-xl border border-white bg-white px-6 py-4 text-center font-bold hover:text-white"
-    >
-      ¡Quiero unirme!
-    </a>
+    <Button route="/involucrate" text="¡Quiero unirme!" class="max-w-fit mx-auto hover:bg-r-green text-r-green grow rounded-xl border border-white hover:border-white bg-white px-6 py-4 text-center font-bold hover:text-white" />
+
   </div>
 
   <Footer />
