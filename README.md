@@ -1,14 +1,10 @@
-# Astro Starter Kit: Basics
+# Página web Fundación Renacer
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este proyecto está construido con [Astro](https://astro.build), un framework moderno para crear sitios web y TailwindCSS.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Estructura del proyecto
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Dentro del proyecto se encuentran los siguientes directorios y archivos:
 
 ```text
 /
@@ -26,11 +22,9 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Comandos
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+Comandos disponibles desde el root del proyecto, desde la terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -41,6 +35,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Más información
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Documentación oficial de [Astro](https://docs.astro.build).
